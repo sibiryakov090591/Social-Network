@@ -8,39 +8,31 @@ ul > li {
     list-style-type: none;
 }
 
-.App {
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #cef8f7;
+}
+
+.App-wrapper {
     display: grid;
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
-    grid-gap: 10px;
     grid-template-areas:
             "header header"
             "sidebar content";
-
-    background-color: #64648d;
-    max-width: 1200px;
+    max-width: 1240px;
     margin: auto;
+    padding: 10px 20px;
 }
 
-.App-header {
-    grid-area: header;
-}
-
-.App-sidebar {
-    grid-area: sidebar;
-    padding: 20px;
-    color: white;
-}
-
-.App-sidebar > ul > li {
-    cursor: pointer;
-    margin: 5px 0;
-}
-
-.App-content {
+.App-wrapper-content {
     grid-area: content;
+    padding: 20px;
 }
 
-.top-img {
-    width: 100%;
+.active > li#nav-link {
+    color: #a07400;
 }

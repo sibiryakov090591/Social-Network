@@ -1,0 +1,12 @@
+.avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.dialog {
+    color: #efad00;
+}
+
+.active_dialog {
+    color: #a07400;
+}

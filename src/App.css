@@ -4,35 +4,21 @@
     padding: 0;
 }
 
-ul > li {
-    list-style-type: none;
-}
-
 a {
     text-decoration: none;
 }
 
 body {
-    background-color: #cef8f7;
+    background-color: #fffcf5;
+    color: #484747;
 }
 
 .App-wrapper {
-    display: grid;
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 2fr 10fr;
-    grid-template-areas:
-            "header header"
-            "sidebar content";
-    max-width: 1240px;
-    margin: auto;
-    padding: 10px 20px;
-}
-
-.App-wrapper-content {
-    grid-area: content;
-    padding: 20px;
+    overflow: hidden;
+    padding-left: 100px;
 }
 
 .active > li#nav-link {
-    color: #a07400;
+    color: #fff;
+    background-color: #fac84d;
 }

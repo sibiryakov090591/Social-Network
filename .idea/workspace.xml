@@ -4,17 +4,31 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/top-img.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/people.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/people.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/people.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/people.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/search/search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/search/search.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/search/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/music/music.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/music/music.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/music/music.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/music/music.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/news.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/news/news.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/news/news.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/news/news.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/settings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/settings/settings.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/settings/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/settings/settings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +60,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/dialogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/profile/profile-info" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -59,13 +73,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\components\profile\profile-info" />
+      <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs\messages\messageItem" />
+      <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs\people\dialog-item" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs" />
       <recent name="C:\INCUBATOR\social\my-app\src\components" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\news" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\profile\my-posts\post" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\components\navbar" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile\my-posts" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\header\search" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\sidebar" />
@@ -105,7 +120,10 @@
       <workItem from="1608063243319" duration="451000" />
       <workItem from="1608063710122" duration="228000" />
       <workItem from="1608063983192" duration="198000" />
-      <workItem from="1608064315517" duration="7106000" />
+      <workItem from="1608064315517" duration="7280000" />
+      <workItem from="1608115482120" duration="33524000" />
+      <workItem from="1608563378749" duration="320000" />
+      <workItem from="1608569592069" duration="379000" />
     </task>
     <servers />
   </component>

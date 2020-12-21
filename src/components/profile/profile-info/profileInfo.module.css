@@ -1,0 +1,19 @@
+.avatar {
+    height: 200px;
+}
+
+.portfolio_wrapper {
+    display: flex;
+}
+
+.descr {
+    margin: 10px 0 0 20px;
+}
+
+.span {
+    color: #efad00;
+}
+
+.descr_item {
+    margin-bottom: 8px;
+}

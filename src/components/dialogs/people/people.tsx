@@ -1,34 +1,28 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
 import styles from "./people.module.css";
+import {DialogItem} from "./dialog-item/dialogItem";
 
-type PeopleType = {
+type DataBaseType = {
     name: string
-    href: string
+    id: number
 }
 
 export function People() {
-    const people: Array<PeopleType> = [
-        {name: "Anna", href: "/Anna"},
-        {name: "Andrey", href: "/Andrey"},
-        {name: "John", href: "/John"},
-        {name: "Tatiana", href: "/Tatiana"},
-        {name: "Alex", href: "/Alex"},
-        {name: "Dima", href: "/Dima"},
-        {name: "Lio", href: "/Lio"}
+
+    const dataBase: Array<DataBaseType> = [
+        {name: "Anna", id: 1},
+        {name: "Andrey", id: 2},
+        {name: "John", id: 3},
+        {name: "Dima", id: 4},
+        {name: "Lio", id: 5}
     ]
 
     return (
-        <div>
+        <div className={styles.people_wrapper}>
             {
-                people.map(p => {
+                dataBase.map(i => {
                     return (
-                        <div>
-                            <img className={styles.avatar} src="ava.jpg" alt="avatar"/>
-                            <NavLink className={styles.dialog} activeClassName={styles.active_dialog} to={p.href}>
-                                {p.name}
-                            </NavLink>
-                        </div>
+                        <DialogItem name={i.name} id={i.id}/>
                     )
                 })
             }

@@ -2,7 +2,6 @@ import React from 'react';
 import styles from "./navbar.module.css";
 import { NavLink } from 'react-router-dom';
 
-
 type NavbarType = {
     title: string
     href: string
@@ -19,7 +18,7 @@ export function Navbar() {
 
     return (
         <nav className={styles.navbar}>
-            <ul className={styles.navbar_menu}>
+            <ul>
                 {
                     navbarLinks.map(item => {
                         return (

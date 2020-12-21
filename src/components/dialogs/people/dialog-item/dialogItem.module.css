@@ -1,0 +1,41 @@
+.avatar {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+.dialog {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 50px;
+    width: 200px;
+    background-color: #faf7e4;
+    border-bottom: 1px solid #efad00;
+    overflow: hidden;
+    color: #efad00;
+    transition: .2s all ease-in-out;
+}
+
+.dialog:before {
+    content: '';
+    height: 60px;
+    width: 200px;
+    background-color: #fdd671;
+    transform: translateX(98%);
+    position: absolute;
+    transition: .2s all ease-in-out;
+}
+
+.dialog.active_dialog {
+    color: #fff;
+}
+
+.dialog.active_dialog:before {
+    transform: translateX(0);
+}
+
+.name {
+    margin-left: 10px;
+    z-index: 1;
+}

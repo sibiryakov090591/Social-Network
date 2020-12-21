@@ -1,4 +1,3 @@
 .dialogs_wrapper {
-    display: grid;
-    grid-template-columns: 3fr 10fr;
+    display: flex;
 }

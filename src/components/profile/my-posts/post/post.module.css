@@ -1,5 +1,10 @@
 .post_wrapper {
     display: flex;
+    margin-top: 30px;
+}
+
+.post_wrapper:first-child {
+    margin-top: 30px;
 }
 
 .avatar {
@@ -7,4 +12,16 @@
     width: 50px;
     height: 50px;
     border-radius: 100%;
+}
+
+.message_wrapper {
+    margin-left: 20px;
+}
+
+.like_icon:hover {
+    fill: red;
+}
+
+.like_icon {
+    cursor: pointer;
 }

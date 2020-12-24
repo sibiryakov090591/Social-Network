@@ -8,20 +8,30 @@ import {Dialogs} from "./components/dialogs/dialogs";
 import {News} from "./components/navbar/news/news";
 import {Music} from "./components/navbar/music/music";
 import {Settings} from "./components/navbar/settings/settings";
+import {ActionType, StateType} from "./redux/state";
 
+type PropsType = {
+    state: StateType
+    addPostsAndMessagesFunc: (action: ActionType) => void
+}
 
-function App() {
+function App(props: PropsType) {
+
     return (
         <BrowserRouter>
             <div className="App-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="App-wrapper-content">
-                    <Route path='/profile' component={Profile}/>
-                    <Route path='/dialogs' component={Dialogs}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>
+                    <Route path='/profile' render={() => <Profile profileData={props.state.profile}
+                                                                  addMyPost={props.addPostsAndMessagesFunc}
+                                                                  onChangeMyPost={props.addPostsAndMessagesFunc}/>}/>
+                    <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogs}
+                                                                  addMessage={props.addPostsAndMessagesFunc}
+                                                                  onChangeMyMessage={props.addPostsAndMessagesFunc}/>}/>
+                    <Route path='/news' render={() => <News />}/>
+                    <Route path='/music' render={() => <Music />}/>
+                    <Route path='/settings' render={() => <Settings />}/>
                 </div>
             </div>
         </BrowserRouter>

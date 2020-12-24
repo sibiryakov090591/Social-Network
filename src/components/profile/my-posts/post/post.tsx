@@ -2,12 +2,12 @@ import React from "react";
 import styles from "./post.module.css";
 
 type PostType = {
-    id: number
+    id: string
     message: string
     likesCount: number
 }
 
-export function Post(props: PostType) {
+export const Post: React.FC<PostType> = (props) => {
 
     let fillLike = "#ababab"
     if (props.likesCount > 0) {
@@ -18,7 +18,7 @@ export function Post(props: PostType) {
         <div className={styles.post_wrapper}>
             <img className={styles.avatar} src="ava.jpg" alt="avatar"/>
             <div className={styles.message_wrapper}>
-                <div className={styles.message} id={props.id.toString()}>
+                <div className={styles.message} id={props.id}>
                     {props.message}
                 </div>
                 <div className={styles.like}>

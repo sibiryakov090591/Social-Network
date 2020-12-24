@@ -1,26 +1,17 @@
 import React from 'react';
 import styles from "./people.module.css";
 import {DialogItem} from "./dialog-item/dialogItem";
+import {PeopleDataType} from "../../../redux/state";
 
-type DataBaseType = {
-    name: string
-    id: number
+type PropsType = {
+    peopleData: Array<PeopleDataType>
 }
-
-export function People() {
-
-    const dataBase: Array<DataBaseType> = [
-        {name: "Anna", id: 1},
-        {name: "Andrey", id: 2},
-        {name: "John", id: 3},
-        {name: "Dima", id: 4},
-        {name: "Lio", id: 5}
-    ]
+export const People:React.FC<PropsType> = ({peopleData}) => {
 
     return (
         <div className={styles.people_wrapper}>
             {
-                dataBase.map(i => {
+                peopleData.map(i => {
                     return (
                         <DialogItem name={i.name} id={i.id}/>
                     )

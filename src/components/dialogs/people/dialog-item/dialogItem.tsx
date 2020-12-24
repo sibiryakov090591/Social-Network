@@ -4,10 +4,10 @@ import styles from "./dialogItem.module.css";
 
 type DialogItemPropsType ={
     name: string
-    id: number
+    id: string
 }
 
-export function DialogItem(props: DialogItemPropsType) {
+export const DialogItem:React.FC<DialogItemPropsType> = (props) => {
 
     return (
         <NavLink className={styles.dialog} activeClassName={styles.active_dialog} to={`/dialogs/${props.id}`}>

@@ -12,7 +12,7 @@ import {ActionType, StateType} from "./redux/state";
 
 type PropsType = {
     state: StateType
-    addPostsAndMessagesFunc: (action: ActionType) => void
+    dispatch: (action: ActionType) => void
 };
 
 const App: React.FC<PropsType> = (props) => {
@@ -24,13 +24,11 @@ const App: React.FC<PropsType> = (props) => {
                 <Navbar/>
                 <div className="App-wrapper-content">
                     <Route path='/profile' render={() => <Profile profileData={props.state.profile}
-                                                                  addMyPost={props.addPostsAndMessagesFunc}
-                                                                  onChangeMyPost={props.addPostsAndMessagesFunc}
+                                                                  dispatch={props.dispatch}
                         />}
                     />
                     <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogs}
-                                                                  addMessage={props.addPostsAndMessagesFunc}
-                                                                  onChangeMyMessage={props.addPostsAndMessagesFunc}
+                                                                  dispatch={props.dispatch}
                         />}
                     />
                     <Route path='/news' render={() => <News />}/>

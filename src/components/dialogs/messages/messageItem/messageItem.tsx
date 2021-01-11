@@ -11,4 +11,4 @@ export const MessageItem: React.FC<MessagePropsType> = (props) => {
     return (
         <div id={props.id}>{props.message}</div>
     )
-}
+};

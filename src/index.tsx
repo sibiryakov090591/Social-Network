@@ -10,7 +10,7 @@ const rerender = () => {
     ReactDOM.render(
         <React.StrictMode>
             <App state={store.getState()}
-                 addPostsAndMessagesFunc={store.dispatch.bind(store)}
+                 dispatch={store.dispatch.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById('root')

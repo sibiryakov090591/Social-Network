@@ -7,7 +7,7 @@ type PropsType = {
     profileData: ProfileType
     addMyPost: (action: ActionType) => void
     onChangeMyPost: (action: ActionType) => void
-}
+};
 
 export const Profile:React.FC<PropsType> = (props) => {
 
@@ -19,4 +19,4 @@ export const Profile:React.FC<PropsType> = (props) => {
                      onChangeMyPost={props.onChangeMyPost}/>
         </div>
     )
-}
+};

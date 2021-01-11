@@ -5,13 +5,14 @@ import {PeopleDataType} from "../../../redux/state";
 
 type PropsType = {
     peopleData: Array<PeopleDataType>
-}
-export const People:React.FC<PropsType> = ({peopleData}) => {
+};
+
+export const People:React.FC<PropsType> = (props) => {
 
     return (
         <div className={styles.people_wrapper}>
             {
-                peopleData.map(i => {
+                props.peopleData.map(i => {
                     return (
                         <DialogItem name={i.name} id={i.id}/>
                     )
@@ -19,4 +20,4 @@ export const People:React.FC<PropsType> = ({peopleData}) => {
             }
         </div>
     )
-}
+};

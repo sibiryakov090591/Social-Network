@@ -5,16 +5,16 @@ import { NavLink } from 'react-router-dom';
 type NavbarType = {
     title: string
     href: string
-}
+};
 
-export function Navbar() {
+export const Navbar = () => {
     const navbarLinks: Array<NavbarType> = [
         {title: "Profile", href: "/profile"},
         {title: "Messages", href: "/dialogs"},
         {title: "News", href: "/news"},
         {title: "Music", href: "/music"},
         {title: "Settings", href: "/settings"}
-    ]
+    ];
 
     return (
         <nav className={styles.navbar}>
@@ -33,4 +33,4 @@ export function Navbar() {
             </ul>
         </nav>
     )
-}
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./header.module.css";
 import {Search} from "./search/search";
 
-export function Header() {
+export const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.header__logo}>
@@ -12,4 +12,4 @@ export function Header() {
             <Search />
         </header>
     )
-}
+};

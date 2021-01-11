@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from "./news.module.css";
 
-export function News() {
+export const News = () => {
 
     return (
         <div>
             News
         </div>
     )
-}
+};

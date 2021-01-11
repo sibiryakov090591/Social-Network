@@ -1,4 +1,6 @@
 import {v1} from "uuid";
+import dialogsReduser from "./dialogs-reduser";
+import profileReduser from "./profile-reduser";
 
 // Types
 export type ProfileInfoDataType = {
@@ -6,46 +8,46 @@ export type ProfileInfoDataType = {
     lastName: string
     birthday: string
     avatar: string
-}
+};
 export type MyPostsInfoDataType = {
     id: string
     message: string
     likesCount: number
-}
+};
 export type PeopleDataType = {
     name: string
     id: string
-}
+};
 export type MessagesDataType = {
     id: string
     message: string
-}
+};
 export type ProfileType = {
     profileInfoData: ProfileInfoDataType
     myPostsInfoData: Array<MyPostsInfoDataType>
     newPostText: string
-}
+};
 export type DialogsType = {
     peopleData: Array<PeopleDataType>
     messagesData: Array<MessagesDataType>
     newMessageText: string
-}
+};
 export type StateType = {
     profile: ProfileType
     dialogs: DialogsType
-}
+};
 export type StoreType = {
     _state: StateType
     getState: () => StateType
     subscribe: (observer: any) => void
     dispatch: (action: ActionType) => void
-}
+};
 export type ActionType = {
     type: string
     post?: string
     text?: string
     message?: string
-}
+};
 
 
 // Store - Redux
@@ -94,58 +96,17 @@ export let store: StoreType = {
         }
     },
     getState() {
-        return this._state
+        return this._state;
     },
     subscribe(observer: any) {
-        rerender = observer
+        rerender = observer;
     },
     dispatch(action: ActionType) {
-        if (action.type === "ADD_POST") {
-            const newPost: MyPostsInfoDataType = {
-                id: v1(),
-                message: this._state.profile.newPostText,
-                likesCount: 0
-            }
-            this._state.profile.myPostsInfoData.push(newPost)
-            this._state.profile.newPostText = ""
-            rerender(store)
-        } else if (action.type === "CHANGE_MY_POST_TEXT") {
-            if (action.text !== undefined) {
-                this._state.profile.newPostText = action.text
-            }
-            rerender(store)
-        } else if (action.type === "ADD_MESSAGE") {
-            const newMessage: MessagesDataType = {
-                id: v1(),
-                message: this._state.dialogs.newMessageText
-            }
-            this._state.dialogs.messagesData.push(newMessage)
-            this._state.dialogs.newMessageText = ""
-            rerender(store)
-        } else if (action.type === "CHANGE_MY_MESSAGE_TEXT") {
-            if (action.text !== undefined) {
-                this._state.dialogs.newMessageText = action.text
-                rerender(store)
-            }
-        }
+        this._state.profile = profileReduser(this._state.profile, action);
+        this._state.dialogs = dialogsReduser(this._state.dialogs, action);
+
+        rerender(store);
     }
 }
 
-let rerender = (store: StoreType) => {
-}
-
-// Action creators
-export const addPostActionCreator = () => ({
-    type: "ADD_POST"
-})
-export const updatePostActionCreator = (text: string) => ({
-    type: "CHANGE_MY_POST_TEXT",
-    text: text
-})
-export const addMessageActionCreator = () => ({
-    type: "ADD_MESSAGE"
-})
-export const updateMessageActionCreator = (text: string) => ({
-    type: "CHANGE_MY_MESSAGE_TEXT",
-    text: text
-})
+let rerender = (store: StoreType) => {};

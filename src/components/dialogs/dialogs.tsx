@@ -8,7 +8,7 @@ export type PropsType = {
     dialogsData: DialogsType
     addMessage: (action: ActionType) => void
     onChangeMyMessage: (action: ActionType) => void
-}
+};
 
 export const Dialogs:React.FC<PropsType> = (props) => {
     return (
@@ -19,4 +19,4 @@ export const Dialogs:React.FC<PropsType> = (props) => {
                       onChangeMyMessage={props.onChangeMyMessage}/>
         </div>
     )
-}
+};

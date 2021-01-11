@@ -1,17 +1,17 @@
 import React from "react";
 import styles from "./post.module.css";
 
-type PostType = {
+export type PostType = {
     id: string
     message: string
     likesCount: number
-}
+};
 
 export const Post: React.FC<PostType> = (props) => {
 
-    let fillLike = "#ababab"
+    let fillLike = "#ababab";
     if (props.likesCount > 0) {
-        fillLike = "red"
+        fillLike = "red";
     }
 
     return (
@@ -47,4 +47,4 @@ export const Post: React.FC<PostType> = (props) => {
             </div>
         </div>
     )
-}
+};

@@ -13,9 +13,9 @@ import {ActionType, StateType} from "./redux/state";
 type PropsType = {
     state: StateType
     addPostsAndMessagesFunc: (action: ActionType) => void
-}
+};
 
-function App(props: PropsType) {
+const App: React.FC<PropsType> = (props) => {
 
     return (
         <BrowserRouter>
@@ -25,10 +25,14 @@ function App(props: PropsType) {
                 <div className="App-wrapper-content">
                     <Route path='/profile' render={() => <Profile profileData={props.state.profile}
                                                                   addMyPost={props.addPostsAndMessagesFunc}
-                                                                  onChangeMyPost={props.addPostsAndMessagesFunc}/>}/>
+                                                                  onChangeMyPost={props.addPostsAndMessagesFunc}
+                        />}
+                    />
                     <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogs}
                                                                   addMessage={props.addPostsAndMessagesFunc}
-                                                                  onChangeMyMessage={props.addPostsAndMessagesFunc}/>}/>
+                                                                  onChangeMyMessage={props.addPostsAndMessagesFunc}
+                        />}
+                    />
                     <Route path='/news' render={() => <News />}/>
                     <Route path='/music' render={() => <Music />}/>
                     <Route path='/settings' render={() => <Settings />}/>

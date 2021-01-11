@@ -5,7 +5,7 @@ import styles from "./dialogItem.module.css";
 type DialogItemPropsType ={
     name: string
     id: string
-}
+};
 
 export const DialogItem:React.FC<DialogItemPropsType> = (props) => {
 
@@ -15,4 +15,4 @@ export const DialogItem:React.FC<DialogItemPropsType> = (props) => {
             <div className={styles.name}>{props.name}</div>
         </NavLink>
     )
-}
+};

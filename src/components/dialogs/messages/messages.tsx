@@ -1,28 +1,29 @@
 import React, {ChangeEvent} from 'react';
 import styles from "./messages.module.css";
 import {MessageItem} from "./messageItem/messageItem";
-import {ActionType, addMessageActionCreator, DialogsType, updateMessageActionCreator} from "../../../redux/state";
+import {ActionType, DialogsType} from "../../../redux/state";
+import { addMessageActionCreator, updateMessageActionCreator } from '../../../redux/dialogs-reduser';
 
 type PropsType = {
     messagesData: DialogsType
     addMessage: (action: ActionType) => void
     onChangeMyMessage: (action: ActionType) => void
-}
+};
 
 export const Messages:React.FC<PropsType> = (props) => {
 
-    let messagesArray = props.messagesData.messagesData.map(i => <MessageItem id={i.id} message={i.message} />)
+    let messagesArray = props.messagesData.messagesData.map(i => <MessageItem id={i.id} message={i.message} />);
 
     const addMessage = () => {
         if (props.messagesData.newMessageText) {
-            props.addMessage(addMessageActionCreator())
+            props.addMessage(addMessageActionCreator());
         }
-    }
+    };
 
     const onChangeMessageText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let text = e.currentTarget.value
-        props.onChangeMyMessage(updateMessageActionCreator(text))
-    }
+        let text = e.currentTarget.value;
+        props.onChangeMyMessage(updateMessageActionCreator(text));
+    };
 
     return (
         <div className={styles.wrapper}>

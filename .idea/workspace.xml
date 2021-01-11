@@ -4,22 +4,28 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messageItem/messageItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messageItem/messageItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/people.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/people.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/people.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/people.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/search/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/music/music.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/music/music.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/news/news.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/news/news.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/settings/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/settings/settings.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/profile/profile-info" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,11 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\redux" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile\profile-info" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs\messages\messageItem" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs\people\dialog-item" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\INCUBATOR\social\my-app\src\components\navbar" />
@@ -121,7 +127,16 @@
       <workItem from="1608660118664" duration="2110000" />
       <workItem from="1608718077638" duration="9643000" />
       <workItem from="1608808542657" duration="8550000" />
-      <workItem from="1608826510395" duration="8800000" />
+      <workItem from="1608826510395" duration="8930000" />
+      <workItem from="1609397281369" duration="1247000" />
+      <workItem from="1609589761951" duration="5405000" />
+      <workItem from="1609857482739" duration="295000" />
+      <workItem from="1609857822601" duration="1306000" />
+      <workItem from="1609859163039" duration="1374000" />
+      <workItem from="1609860686900" duration="1514000" />
+      <workItem from="1610223298666" duration="82000" />
+      <workItem from="1610354828518" duration="6339000" />
+      <workItem from="1610363335823" duration="8665000" />
     </task>
     <servers />
   </component>

@@ -15,6 +15,7 @@ export const Messages:React.FC<PropsType> = (props) => {
     let messagesArray = props.messagesData.map(i => <MessageItem id={i.id} message={i.message} />);
 
     const onChangeMessageText = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        debugger
         let text = e.currentTarget.value;
         props.onChangeMyMessage(text);
     };

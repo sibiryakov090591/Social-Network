@@ -1,31 +1,22 @@
 import React from 'react';
-import {ActionType, MessagesDataType} from "../../../redux/state";
-import { addMessageActionCreator, updateMessageActionCreator } from '../../../redux/dialogs-reduser';
+import {addMessageActionCreator, updateMessageActionCreator} from '../../../redux/dialogs-reduser';
 import {Messages} from "./messages";
+import {connect} from "react-redux";
+import {GlobalStateType} from '../../../redux/redux-store';
+import {Dispatch} from "redux";
 
-type PropsType = {
-    messagesData: Array<MessagesDataType>
-    dispatch: (action: ActionType) => void
-    currentValue: string
+const mapStateToProps = (state: GlobalStateType) => {
+    return {
+        messagesData: state.dialogs.messagesData,
+        currentValue: state.dialogs.newMessageText
+    }
 };
 
-export const MessagesContainer:React.FC<PropsType> = (props) => {
+const mapDispatchToProps = (dispatch: Dispatch) => {
+    return {
+        addMessage: () => dispatch(addMessageActionCreator()),
+        onChangeMyMessage: (text: string) => dispatch(updateMessageActionCreator(text))
+    }
+};
 
-    const addMessage = () => {
-        if (props.currentValue) {
-            props.dispatch(addMessageActionCreator());
-        }
-    };
-
-    const onChangeMessageText = (text: string) => {
-        props.dispatch(updateMessageActionCreator(text));
-    };
-
-    return (
-        <Messages messagesData={props.messagesData}
-                  addMessage={addMessage}
-                  onChangeMyMessage={onChangeMessageText}
-                  currentValue={props.currentValue}
-        />
-    )
-}
+export const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);

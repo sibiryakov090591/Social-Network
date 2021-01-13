@@ -36,7 +36,7 @@ export type StateType = {
     profile: ProfileType
     dialogs: DialogsType
 };
-export type StoreType = {
+type StoreType = {
     _state: StateType
     getState: () => StateType
     subscribe: (observer: any) => void
@@ -51,7 +51,7 @@ export type ActionType = {
 
 
 // Store - Redux
-export let store: StoreType = {
+let store: StoreType = {
     _state: {
         profile: {
             profileInfoData: {

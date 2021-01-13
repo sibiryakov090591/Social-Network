@@ -8,14 +8,16 @@ import {Dialogs} from "./components/dialogs/dialogs";
 import {News} from "./components/navbar/news/news";
 import {Music} from "./components/navbar/music/music";
 import {Settings} from "./components/navbar/settings/settings";
-import {ActionType, StateType} from "./redux/state";
+import {GlobalStateType} from "./redux/redux-store";
 
 type PropsType = {
-    state: StateType
-    dispatch: (action: ActionType) => void
-};
+    store: GlobalStateType
+}
 
-const App: React.FC<PropsType> = (props) => {
+const App: React.FC<any> = (props) => {
+
+    const state = props.store.getState();
+
 
     return (
         <BrowserRouter>
@@ -23,13 +25,9 @@ const App: React.FC<PropsType> = (props) => {
                 <Header/>
                 <Navbar/>
                 <div className="App-wrapper-content">
-                    <Route path='/profile' render={() => <Profile profileData={props.state.profile}
-                                                                  dispatch={props.dispatch}
-                        />}
+                    <Route path='/profile' render={() => <Profile store={props.store}/>}
                     />
-                    <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.dialogs}
-                                                                  dispatch={props.dispatch}
-                        />}
+                    <Route path='/dialogs' render={() => <Dialogs store={props.store}/>}
                     />
                     <Route path='/news' render={() => <News />}/>
                     <Route path='/music' render={() => <Music />}/>

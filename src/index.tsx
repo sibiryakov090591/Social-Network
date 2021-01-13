@@ -4,15 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from './redux/redux-store';
+import {Provider} from "react-redux";
 
 // Render
 const rerender = () => {
     ReactDOM.render(
-        <React.StrictMode>
-            <App state={store.getState()}
-                 dispatch={store.dispatch.bind(store)}
-            />
-        </React.StrictMode>,
+            <Provider store={store}>
+                <App store={store}/>
+            </Provider>,
         document.getElementById('root')
     );
 }

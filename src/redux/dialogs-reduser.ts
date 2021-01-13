@@ -23,24 +23,26 @@ const dialogsReduser = (state: DialogsType = initialState, action: ActionType) =
     const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
 
     switch (action.type) {
-        case ADD_MESSAGE: {
+        case ADD_MESSAGE:
             const newMessage: MessagesDataType = {
                 id: v1(),
                 message: state.newMessageText
             };
-            const stateCopy = {...state};
-            stateCopy.messagesData = [...state.messagesData];
-            stateCopy.messagesData.push(newMessage);
-            stateCopy.newMessageText = "";
-            return stateCopy;
-        }
-        case CHANGE_MY_MESSAGE_TEXT: {
-            const stateCopy = {...state};
+            return {
+                ...state,
+                messagesData: [...state.messagesData, newMessage],
+                newMessageText: ""
+            };
+
+        case CHANGE_MY_MESSAGE_TEXT:
             if (action.text !== undefined) {
-                stateCopy.newMessageText = action.text;
-            }
-            return stateCopy;
-        }
+                return {
+                    ...state,
+                    newMessageText: action.text
+                }
+            } else return state
+
+
         default: return state;
     }
 }

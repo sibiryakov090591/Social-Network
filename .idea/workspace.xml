@@ -4,20 +4,10 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +138,7 @@
       <workItem from="1610450570789" duration="2607000" />
       <workItem from="1610453217034" duration="6010000" />
       <workItem from="1610540161630" duration="5876000" />
-      <workItem from="1610556329298" duration="5892000" />
+      <workItem from="1610556329298" duration="9630000" />
     </task>
     <servers />
   </component>

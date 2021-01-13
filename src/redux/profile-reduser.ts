@@ -34,25 +34,26 @@ const profileReduser = (state: ProfileType = initialState, action: ActionType) =
     const CHANGE_MY_POST_TEXT = "CHANGE_MY_POST_TEXT";
 
     switch (action.type) {
-        case ADD_POST: {
+        case ADD_POST:
             const newPost: MyPostsInfoDataType = {
                 id: v1(),
                 message: state.newPostText,
                 likesCount: 0
             };
-            const stateCopy = {...state};
-            stateCopy.myPostsInfoData = [...state.myPostsInfoData];
-            stateCopy.myPostsInfoData.push(newPost);
-            stateCopy.newPostText = "";
-            return stateCopy;
-        }
-        case CHANGE_MY_POST_TEXT: {
-            const stateCopy = {...state};
+            return {
+                ...state,
+                myPostsInfoData: [newPost, ...state.myPostsInfoData],
+                newPostText: ""
+            };
+
+        case CHANGE_MY_POST_TEXT:
             if (action.text !== undefined) {
-                stateCopy.newPostText = action.text;
-            }
-            return stateCopy;
-        }
+                return {
+                    ...state,
+                    newPostText: action.text
+                }
+            } else return state
+
         default: return state;
     }
 }

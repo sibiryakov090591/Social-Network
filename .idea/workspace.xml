@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gialogs-reduser/dialogs-reduser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.ts" afterDir="false" />
-    </list>
+    <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +158,44 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="experement" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>

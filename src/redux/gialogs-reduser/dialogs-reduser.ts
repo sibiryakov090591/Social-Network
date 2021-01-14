@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {ActionType, DialogsType, MessagesDataType} from "./state";
+import {ActionType, DialogsType, MessagesDataType} from "../state";
 
 const initialState = {
     peopleData: [
@@ -17,10 +17,10 @@ const initialState = {
     newMessageText: ""
 };
 
-const dialogsReduser = (state: DialogsType = initialState, action: ActionType) => {
+export const ADD_MESSAGE = "ADD_MESSAGE";
+export const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
 
-    const ADD_MESSAGE = "ADD_MESSAGE";
-    const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
+const dialogsReduser = (state: DialogsType = initialState, action: ActionType) => {
 
     switch (action.type) {
         case ADD_MESSAGE:

@@ -1,7 +1,7 @@
 import {v1} from "uuid";
-import {ActionType, MyPostsInfoDataType, ProfileType} from "./state";
+import {ActionType, MyPostsInfoDataType, ProfileType} from "../state";
 
-const initialState = {
+const initialState: ProfileType = {
     profileInfoData: {
         firstName: "Andrew",
         lastName: "Sibiryakov",
@@ -28,10 +28,10 @@ const initialState = {
     newPostText: ""
 };
 
-const profileReduser = (state: ProfileType = initialState, action: ActionType) => {
+export const ADD_POST = "ADD_POST";
+export const CHANGE_MY_POST_TEXT = "CHANGE_MY_POST_TEXT";
 
-    const ADD_POST = "ADD_POST";
-    const CHANGE_MY_POST_TEXT = "CHANGE_MY_POST_TEXT";
+export const profileReduser = (state: ProfileType = initialState, action: ActionType) => {
 
     switch (action.type) {
         case ADD_POST:

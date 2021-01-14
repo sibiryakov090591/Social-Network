@@ -1,5 +1,5 @@
 import React from "react";
-import { addPostActionCreator, updatePostActionCreator } from "../../../redux/profile-reduser";
+import { addPostActionCreator, updatePostActionCreator } from "../../../redux/profile-reduser/profile-reduser";
 import {MyPosts} from "./my-posts";
 import {GlobalStateType} from "../../../redux/redux-store";
 import {Dispatch} from "redux";

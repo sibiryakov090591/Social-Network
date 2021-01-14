@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/gialogs-reduser/dialogs-reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +45,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/profile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux/gialogs-reduser" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="ts.external.directory.path" value="C:\INCUBATOR\social\my-app\node_modules\typescript\lib" />
@@ -58,21 +60,34 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\redux\gialogs-reduser" />
+      <recent name="C:\INCUBATOR\social\my-app\src\redux\profile-reduser" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs\messages" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile\my-posts" />
-      <recent name="C:\INCUBATOR\social\my-app\src\redux" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\profile\profile-info" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\redux\profile-reduser" />
+      <recent name="C:\INCUBATOR\social\my-app\src\redux\gialogs-reduser" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\navbar" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile\my-posts" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\header\search" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\sidebar" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\header" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.My post added">
+    <configuration name="My post added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" />
+      <test-names>
+        <test-name value="My post added" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -85,7 +100,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
+        <item itemvalue="Jest.My post added" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
@@ -138,7 +153,8 @@
       <workItem from="1610450570789" duration="2607000" />
       <workItem from="1610453217034" duration="6010000" />
       <workItem from="1610540161630" duration="5876000" />
-      <workItem from="1610556329298" duration="9630000" />
+      <workItem from="1610556329298" duration="10312000" />
+      <workItem from="1610628904463" duration="1872000" />
     </task>
     <servers />
   </component>

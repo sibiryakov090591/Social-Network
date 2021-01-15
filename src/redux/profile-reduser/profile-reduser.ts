@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {ActionType, MyPostsInfoDataType, ProfileType} from "../state";
+import {ActionType, MyPostsInfoDataType, ProfileType} from "../my-types";
 
 const initialState: ProfileType = {
     profileInfoData: {

@@ -1,6 +1,6 @@
 import {v1} from "uuid";
 import profileReduser, { ADD_POST, CHANGE_MY_POST_TEXT } from "./profile-reduser";
-import {ActionType, ProfileType} from "../state";
+import {ActionType, ProfileType} from "../my-types";
 
 test("My post added", () => {
 

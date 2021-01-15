@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
-import { MyPostsInfoDataType } from "../../../redux/state";
 import styles from "./my-posts.module.css";
+import { MyPostsInfoDataType } from "../../../redux/my-types";
 import { Post } from "./post/post";
 
 type MyPostsType = {

@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/redux/my-types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts-container.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/people.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/people.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/post/post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gialogs-reduser/dialogs-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/gialogs-reduser/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/state.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/dialogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -73,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\redux" />
+      <recent name="C:\INCUBATOR\social\my-app\src\components\users" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile" />
       <recent name="C:\INCUBATOR\social\my-app\src\redux\gialogs-reduser" />
-      <recent name="C:\INCUBATOR\social\my-app\src\redux\profile-reduser" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\dialogs\messages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\INCUBATOR\social\my-app\src\redux\profile-reduser" />
@@ -172,7 +169,7 @@
       <workItem from="1610663186760" duration="202000" />
       <workItem from="1610663403194" duration="135000" />
       <workItem from="1610663551480" duration="2690000" />
-      <workItem from="1610708217898" duration="4341000" />
+      <workItem from="1610708217898" duration="10597000" />
     </task>
     <servers />
   </component>

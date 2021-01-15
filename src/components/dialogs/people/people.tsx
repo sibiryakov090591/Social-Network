@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./people.module.css";
-import {DialogItem} from "./dialog-item/dialogItem";
-import {PeopleDataType} from "../../../redux/state";
+import { DialogItem } from "./dialog-item/dialogItem";
+import { PeopleDataType } from "../../../redux/my-types";
 
 type PropsType = {
     peopleData: Array<PeopleDataType>

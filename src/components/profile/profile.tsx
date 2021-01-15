@@ -1,7 +1,7 @@
 import React from "react";
-import {ProfileInfo} from "./profile-info/profileInfo";
-import {MyPosts} from "./my-posts/my-posts";
-import {MyPostsInfoDataType, ProfileInfoDataType} from "../../redux/state";
+import { ProfileInfo } from "./profile-info/profileInfo";
+import { MyPosts } from "./my-posts/my-posts";
+import { MyPostsInfoDataType, ProfileInfoDataType } from "../../redux/my-types";
 
 type ProfilePropsType = {
     profileInfoData: ProfileInfoDataType

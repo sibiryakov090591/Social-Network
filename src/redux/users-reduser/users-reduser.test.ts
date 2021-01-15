@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import dialogsReduser, { ADD_MESSAGE, CHANGE_MY_MESSAGE_TEXT } from "./dialogs-reduser";
+import usersReduser, { ADD_MESSAGE, CHANGE_MY_MESSAGE_TEXT } from "./users-reduser";
 import {ActionType, DialogsType} from "../my-types";
 
 test("My message added", () => {
@@ -23,7 +23,7 @@ test("My message added", () => {
         type: ADD_MESSAGE
     };
 
-    const newState = dialogsReduser(state, action);
+    const newState = usersReduser(state, action);
 
     expect(newState.messagesData.length).toBe(4);
     expect(newState.messagesData[newState.messagesData.length - 1].message).toBe("Test message");
@@ -52,7 +52,7 @@ test("newPostText is changed", () => {
         text: "Test message"
     };
 
-    const newState = dialogsReduser(state, action);
+    const newState = usersReduser(state, action);
 
     expect(newState.newMessageText).toBe("Test message");
 })

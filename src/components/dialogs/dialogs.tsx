@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from "./dialogs.module.css";
-import {People} from "./people/people";
-import {Messages} from "./messages/messages";
-import {MessagesDataType, PeopleDataType} from "../../redux/state";
+import { People } from "./people/people";
+import { Messages } from "./messages/messages";
+import { MessagesDataType, PeopleDataType } from "../../redux/my-types";
 
 type DialogsType = {
     peopleData: Array<PeopleDataType>

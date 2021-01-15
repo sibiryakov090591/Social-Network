@@ -1,9 +1,9 @@
 import React from "react";
-import {connect} from "react-redux";
-import {GlobalStateType} from "../../redux/redux-store";
-import {Dispatch} from "redux";
-import {addPostActionCreator, updatePostActionCreator} from "../../redux/profile-reduser/profile-reduser";
-import {Profile} from "./profile";
+import { connect } from "react-redux";
+import { GlobalStateType } from "../../redux/redux-store";
+import { Dispatch } from "redux";
+import { addPostActionCreator, updatePostActionCreator } from "../../redux/profile-reduser/profile-reduser";
+import { Profile } from "./profile";
 
 const mapStateToProps = (state: GlobalStateType) => {
     return {

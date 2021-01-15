@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {ActionType, DialogsType, MessagesDataType} from "../state";
+import {ActionType, DialogsType, MessagesDataType} from "../my-types";
 
 const initialState: DialogsType = {
     peopleData: [

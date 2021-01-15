@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import styles from "./messages.module.css";
 import { MessageItem } from "./messageItem/messageItem";
-import { MessagesDataType } from "../../../redux/state";
+import { MessagesDataType } from "../../../redux/my-types";
 
 type MessagesPropsType = {
     messagesData: Array<MessagesDataType>

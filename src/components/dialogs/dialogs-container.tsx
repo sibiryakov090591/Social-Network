@@ -1,12 +1,13 @@
 import React from 'react';
-import {addMessageActionCreator, updateMessageActionCreator} from '../../../redux/dialogs-reduser/dialogs-reduser';
-import {Messages} from "./messages";
-import {connect} from "react-redux";
-import {GlobalStateType} from '../../../redux/redux-store';
-import {Dispatch} from "redux";
+import { GlobalStateType } from "../../redux/redux-store";
+import { Dispatch } from "redux";
+import { connect } from "react-redux";
+import { addMessageActionCreator, updateMessageActionCreator } from "../../redux/dialogs-reduser/dialogs-reduser";
+import { Dialogs } from './dialogs';
 
 const mapStateToProps = (state: GlobalStateType) => {
     return {
+        peopleData: state.dialogs.peopleData,
         messagesData: state.dialogs.messagesData,
         currentValue: state.dialogs.newMessageText
     }
@@ -19,4 +20,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     }
 };
 
-export const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
+export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);

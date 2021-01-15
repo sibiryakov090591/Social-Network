@@ -1,16 +1,27 @@
 import React from 'react';
 import styles from "./dialogs.module.css";
 import {People} from "./people/people";
-import {MessagesContainer} from "./messages/messages-container";
+import {Messages} from "./messages/messages";
+import {MessagesDataType, PeopleDataType} from "../../redux/state";
 
-export const Dialogs:React.FC<any> = (props) => {
+type DialogsType = {
+    peopleData: Array<PeopleDataType>
+    messagesData: Array<MessagesDataType>
+    currentValue: string
+    addMessage: () => void
+    onChangeMyMessage: (text: string) => void
+};
 
-    const state = props.store.getState();
+export const Dialogs:React.FC<DialogsType> = (props) => {
 
     return (
         <div className={styles.dialogs_wrapper}>
-            <People peopleData={state.dialogs.peopleData}/>
-            <MessagesContainer />
+            <People peopleData={props.peopleData}/>
+            <Messages  messagesData={props.messagesData}
+                       currentValue={props.currentValue}
+                       addMessage={props.addMessage}
+                       onChangeMyMessage={props.onChangeMyMessage}
+            />
         </div>
     )
 };

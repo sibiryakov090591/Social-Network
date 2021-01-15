@@ -2,31 +2,30 @@ import React from "react";
 import styles from "./profileInfo.module.css";
 import {ProfileInfoDataType} from "../../../redux/state";
 
-type PropsType = {
+type ProfileInfoPropsType = {
     profileInfoData: ProfileInfoDataType
 };
 
-export const ProfileInfo: React.FC<PropsType> = ({profileInfoData}) => {
-
+export const ProfileInfo: React.FC<ProfileInfoPropsType> = (props) => {
     return (
         <div className={styles.portfolio_wrapper}>
             <img className={styles.avatar}
-                 src={profileInfoData.avatar}
+                 src={props.profileInfoData.avatar}
                  alt="my-avatar"
             />
 
             <div className={styles.descr}>
                 <div className={styles.descr_item}>
                     <span className={styles.span}>Firstname:</span>
-                    {profileInfoData.firstName}
+                    {props.profileInfoData.firstName}
                 </div>
                 <div className={styles.descr_item}>
                     <span className={styles.span}>Lastname:</span>
-                    {profileInfoData.lastName}
+                    {props.profileInfoData.lastName}
                 </div>
                 <div className={styles.descr_item}>
                     <span className={styles.span}>Birthday:</span>
-                    {profileInfoData.birthday}
+                    {props.profileInfoData.birthday}
                 </div>
             </div>
         </div>

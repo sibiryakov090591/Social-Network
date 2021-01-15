@@ -1,6 +1,6 @@
 import {combineReducers, createStore} from "redux";
 import profileReduser from "./profile-reduser/profile-reduser";
-import dialogsReduser from "./gialogs-reduser/dialogs-reduser";
+import dialogsReduser from "./dialogs-reduser/dialogs-reduser";
 
 const rootReducer = combineReducers({
     profile: profileReduser,

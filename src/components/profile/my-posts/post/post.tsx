@@ -10,6 +10,7 @@ export type PostType = {
 export const Post: React.FC<PostType> = (props) => {
 
     let fillLike = "#ababab";
+
     if (props.likesCount > 0) {
         fillLike = "red";
     }

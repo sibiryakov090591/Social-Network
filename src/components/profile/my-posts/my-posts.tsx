@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from "react";
 import { MyPostsInfoDataType } from "../../../redux/state";
 import styles from "./my-posts.module.css";
-import {Post} from "./post/post";
+import { Post } from "./post/post";
 
 type MyPostsType = {
     myPosts: Array<MyPostsInfoDataType>
@@ -12,16 +12,14 @@ type MyPostsType = {
 
 export const MyPosts: React.FC<MyPostsType> = (props) => {
 
-    // Posts from redux store
-    let allPosts = props.myPosts.map(i =>
+    const allPosts = props.myPosts.map(i =>
         <Post id={i.id}
               message={i.message}
               likesCount={i.likesCount}
         />);
 
-    // Handler
     const onChangePostText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        let text = e.currentTarget.value;
+        const text = e.currentTarget.value;
         props.onChangePost(text);
     };
 

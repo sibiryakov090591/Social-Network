@@ -1,15 +1,25 @@
 import React from "react";
 import {ProfileInfo} from "./profile-info/profileInfo";
-import {MyPostsContainer} from "./my-posts/my-posts-container";
+import {MyPosts} from "./my-posts/my-posts";
+import {MyPostsInfoDataType, ProfileInfoDataType} from "../../redux/state";
 
-export const Profile:React.FC<any> = (props) => {
+type ProfilePropsType = {
+    profileInfoData: ProfileInfoDataType
+    myPosts: Array<MyPostsInfoDataType>
+    currentValue: string
+    addPost: () => void
+    onChangePost: (text: string) => void
+};
 
-    const state = props.store.getState();
-
+export const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <div>
-            <ProfileInfo profileInfoData={state.profile.profileInfoData}/>
-            <MyPostsContainer />
+            <ProfileInfo profileInfoData={props.profileInfoData}/>
+            <MyPosts myPosts={props.myPosts}
+                     currentValue={props.currentValue}
+                     addPost={props.addPost}
+                     onChangePost={props.onChangePost}
+            />
         </div>
     )
 };

@@ -1,7 +1,7 @@
 import {v1} from "uuid";
 import {ActionType, DialogsType, MessagesDataType} from "../state";
 
-const initialState = {
+const initialState: DialogsType = {
     peopleData: [
         {name: "Anna", id: v1()},
         {name: "Andrey", id: v1()},

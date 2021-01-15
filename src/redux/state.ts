@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import dialogsReduser from "./gialogs-reduser/dialogs-reduser";
+import dialogsReduser from "./dialogs-reduser/dialogs-reduser";
 import profileReduser from "./profile-reduser/profile-reduser";
 
 // Types

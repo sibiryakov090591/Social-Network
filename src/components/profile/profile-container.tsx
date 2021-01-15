@@ -1,12 +1,13 @@
 import React from "react";
-import { addPostActionCreator, updatePostActionCreator } from "../../../redux/profile-reduser/profile-reduser";
-import {MyPosts} from "./my-posts";
-import {GlobalStateType} from "../../../redux/redux-store";
-import {Dispatch} from "redux";
 import {connect} from "react-redux";
+import {GlobalStateType} from "../../redux/redux-store";
+import {Dispatch} from "redux";
+import {addPostActionCreator, updatePostActionCreator} from "../../redux/profile-reduser/profile-reduser";
+import {Profile} from "./profile";
 
 const mapStateToProps = (state: GlobalStateType) => {
     return {
+        profileInfoData: state.profile.profileInfoData,
         myPosts: state.profile.myPostsInfoData,
         currentValue: state.profile.newPostText
     }
@@ -19,4 +20,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     }
 };
 
-export const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts);
+export const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile);

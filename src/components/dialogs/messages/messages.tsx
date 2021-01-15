@@ -1,22 +1,21 @@
-import React, {ChangeEvent} from 'react';
+import React, { ChangeEvent } from 'react';
 import styles from "./messages.module.css";
-import {MessageItem} from "./messageItem/messageItem";
-import {ActionType, MessagesDataType} from "../../../redux/state";
+import { MessageItem } from "./messageItem/messageItem";
+import { MessagesDataType } from "../../../redux/state";
 
-type PropsType = {
+type MessagesPropsType = {
     messagesData: Array<MessagesDataType>
-    addMessage: (action: ActionType) => void
+    addMessage: () => void
     onChangeMyMessage: (text: string) => void
     currentValue: string
 };
 
-export const Messages:React.FC<PropsType> = (props) => {
+export const Messages:React.FC<MessagesPropsType> = (props) => {
 
-    let messagesArray = props.messagesData.map(i => <MessageItem id={i.id} message={i.message} />);
+    const messagesArray = props.messagesData.map(i => <MessageItem id={i.id} message={i.message} />);
 
     const onChangeMessageText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        debugger
-        let text = e.currentTarget.value;
+        const text = e.currentTarget.value;
         props.onChangeMyMessage(text);
     };
 

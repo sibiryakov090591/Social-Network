@@ -1,11 +1,15 @@
-
+:root {
+    --body-bg-color: #fffcf5;
+    --header-bg-color: #faf7e4;
+    --btn-and-border-bg-color: #fdd671;
+    --active-btn-bg-color: #fac84d;
+    --active-btn-text-color: #ffffff;
+    --textarea-bg-color: #fcf8f2;
+    --main-text-color: #efad00;
+    --body-text-color: #484747;
+}
 
 .App-wrapper {
     overflow: hidden;
     padding-left: 100px;
-}
-
-.active > li#nav-link {
-    color: #fff;
-    background-color: #fac84d;
 }

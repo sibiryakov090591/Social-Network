@@ -10,7 +10,7 @@
 .title {
     margin-top: 30px;
     font-size: 23px;
-    color: #efad00;
+    color: var(--main-text-color);
 }
 
 .post_btn {
@@ -19,17 +19,17 @@
     width: 130px;
     height: 30px;
     outline: none;
-    background-color: #fdd671;
+    background-color: var(--btn-and-border-bg-color);
     border: none;
-    border-bottom: 3px solid #efad00;
+    border-bottom: 3px solid var(--main-text-color);
     border-radius: 3px;
-    color: #fff;
+    color: var(--active-btn-text-color);
     font-weight: 600;
     cursor: pointer;
 }
 
 .post_btn:active {
-    background-color: #facb61;
+    background-color: var(--active-btn-bg-color);
 }
 
 .post_message {
@@ -40,8 +40,8 @@
     outline: none;
     padding: 10px;
     border-radius: 3px;
-    border: 1px solid #fdd671;
-    background-color: #fcf8f2;
+    border: 1px solid var(--btn-and-border-bg-color);
+    background-color: var(--textarea-bg-color);
 }
 
 .posts_wrapper {

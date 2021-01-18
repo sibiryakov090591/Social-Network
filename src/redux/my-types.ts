@@ -42,6 +42,7 @@ export type UserItemType = {
         country: string
         city: string
     }
+    status: string
 };
 
 

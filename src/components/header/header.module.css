@@ -3,7 +3,7 @@
     justify-content: space-between;
     height: 100px;
     width: 100%;
-    background-color: #faf7e4;
+    background-color: var(--header-bg-color);
     padding: 0 20px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .header__logo_text {
-    color: #efad00;
+    color: var(--main-text-color);
     font-size: 23px;
     margin-left: -10px;
 }

@@ -18,6 +18,12 @@ export const MyPosts: React.FC<MyPostsType> = (props) => {
               likesCount={i.likesCount}
         />);
 
+    const addPost = () => {
+        if (props.currentValue.trim()) {
+            props.addPost()
+        }
+    };
+
     const onChangePostText = (e: ChangeEvent<HTMLTextAreaElement>) => {
         const text = e.currentTarget.value;
         props.onChangePost(text);
@@ -32,7 +38,7 @@ export const MyPosts: React.FC<MyPostsType> = (props) => {
                           value={props.currentValue}>
                 </textarea>
                 <button className={styles.post_btn}
-                        onClick={props.addPost}>
+                        onClick={addPost}>
                     New post
                 </button>
             </div>

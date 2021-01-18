@@ -31,7 +31,7 @@ const initialState: ProfileType = {
 export const ADD_POST = "ADD_POST";
 export const CHANGE_MY_POST_TEXT = "CHANGE_MY_POST_TEXT";
 
-export const profileReduser = (state: ProfileType = initialState, action: ActionType) => {
+const profileReduser = (state = initialState, action: ActionType) => {
 
     switch (action.type) {
         case ADD_POST:

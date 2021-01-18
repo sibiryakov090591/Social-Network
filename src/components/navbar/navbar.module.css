@@ -3,7 +3,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    background-color: #fdd671;
+    background-color: var(--btn-and-border-bg-color);
 }
 
 .navbar_link {
@@ -11,9 +11,9 @@
     font-weight: 500;
     height: 100px;
     width: 100px;
-    color: #efad00;
-    background-color: #fdd671;
-    border-bottom: 1px solid #efad00;
+    color: var(--main-text-color);
+    background-color: var(--btn-and-border-bg-color);
+    border-bottom: 1px solid var(--main-text-color);
     transition: .3s all;
     display: flex;
     justify-content: center;
@@ -21,6 +21,11 @@
 }
 
 .navbar_link:hover {
-    color: #fffcf1;
-    background-color: #fac84d;
+    color: var(--active-btn-text-color);
+    background-color: var(--active-btn-bg-color);
+}
+
+.active > .navbar_link {
+    color: var(--active-btn-text-color);
+    background-color: var(--active-btn-bg-color);
 }

@@ -11,7 +11,19 @@ const initialState: UsersType = {
             location: {
                 country: "Russia",
                 city: "Moscow"
-            }
+            },
+            status: "Test status"
+        },
+        {
+            id: v1(),
+            name: "Alex",
+            photoUrl: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+            isFriend: true,
+            location: {
+                country: "Russia",
+                city: "Moscow"
+            },
+            status: "Test status"
         },
         {
             id: v1(),
@@ -21,17 +33,8 @@ const initialState: UsersType = {
             location: {
                 country: "Russia",
                 city: "Moscow"
-            }
-        },
-        {
-            id: v1(),
-            name: "Alex",
-            photoUrl: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
-            isFriend: false,
-            location: {
-                country: "Russia",
-                city: "Moscow"
-            }
+            },
+            status: "Test status"
         }
     ]
 };

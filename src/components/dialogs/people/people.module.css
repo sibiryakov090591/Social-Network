@@ -1,4 +1,4 @@
 .people_wrapper {
     height: 100vh;
-    background-color: #faf7e4;
+    background-color: var(--header-bg-color);
 }

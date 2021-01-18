@@ -10,15 +10,15 @@
     height: 30px;
     padding: 5px 35px 5px 10px;
     border: none;
-    border-bottom: 3px solid #efad00;
+    border-bottom: 3px solid var(--main-text-color);
     border-radius: 3px;
     outline: none;
-    color: #535353;
-    background-color: #fdd671;
+    color: var(--body-text-color);
+    background-color: var(--btn-and-border-bg-color);
 }
 
 .search_input::placeholder {
-    color: #ffffff;
+    color: var(--active-btn-text-color);
     font-weight: 600;
 }
 

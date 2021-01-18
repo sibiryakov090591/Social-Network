@@ -21,8 +21,8 @@
     outline: none;
     padding: 10px;
     border-radius: 3px;
-    border: 1px solid #fdd671;
-    background-color: #fcf8f2;
+    border: 1px solid var(--btn-and-border-bg-color);
+    background-color: var(--textarea-bg-color);
 }
 
 .post_btn {
@@ -33,7 +33,7 @@
     outline: none;
     background-color: #fdd671;
     border: none;
-    border-bottom: 3px solid #efad00;
+    border-bottom: 3px solid var(--main-text-color);
     border-radius: 3px;
     color: #fff;
     font-weight: 600;
@@ -41,5 +41,5 @@
 }
 
 .post_btn:active {
-    background-color: #facb61;
+    background-color: var(--active-btn-bg-color);
 }

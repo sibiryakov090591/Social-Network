@@ -11,7 +11,7 @@
 }
 
 .span {
-    color: #efad00;
+    color: var(--main-text-color);
 }
 
 .descr_item {

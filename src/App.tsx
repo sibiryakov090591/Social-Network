@@ -8,12 +8,12 @@ import {Music} from "./components/music/music";
 import {Settings} from "./components/settings/settings";
 import {ProfileContainer} from "./components/profile/profile-container";
 import {DialogsContainer} from './components/dialogs/dialogs-container';
-import {UsersContainer} from './components/users/users-container';
+import UsersContainer from './components/users/users-container';
 
 const App = () => {
     return (
         <BrowserRouter>
-            <div className="App-wrapper">
+            <div className="App-wrapper">w
                 <Header/>
                 <Navbar/>
                 <div className="App-wrapper-content">

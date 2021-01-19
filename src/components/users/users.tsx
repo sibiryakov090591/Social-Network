@@ -1,28 +1,44 @@
 import React from 'react';
 import styles from './users.module.css';
-import {UsersType} from "../../redux/my-types";
+import {UserItemType} from "../../redux/my-types";
 
-type UsersPropsType = {
-    usersData: UsersType
-    subscribeHandler: (id: string) => void
-    unsubscribeHandler: (id: string) => void
-};
+interface Props {
+    usersData: UserItemType[]
+    subscribeHandler: (id: string | number) => void
+    unsubscribeHandler: (id: string | number) => void
+    setUsers: (users: UserItemType[]) => void
+    setCurrentPage: (id: number) => void
+    setTotalCount: (id: number) => void
+    onPageChange: (id: number) => void
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number
+}
 
-export const Users: React.FC<UsersPropsType> = (props) => {
+export const Users: React.FC<Props> = (props) => {
 
-    const users = props.usersData.users.map(i => {
+    const howManyPages = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= howManyPages; i++) {
+        pages.push(i);
+    }
+
+    const users = props.usersData.map(i => {
+
         const unsubscribeHandler = () => props.unsubscribeHandler(i.id);
         const subscribeHandler = () => props.subscribeHandler(i.id);
+        const photoUrl = i.photos.large || i.photos.small || "ava.jpg";
+
         return (
             <div className={styles.itemWrapper} key={i.id}>
                 <div className={styles.buttonWrapper}>
                     <div className={styles.avatarWrapper}>
-                        <img className={styles.avatar} src={i.photoUrl} alt="avatar"/>
+                        <img className={styles.avatar} src={photoUrl} alt="avatar"/>
                     </div>
                     {
-                        i.isFriend
-                        ? <button className={styles.button} onClick={unsubscribeHandler}>unFollow</button>
-                        : <button className={styles.button} onClick={subscribeHandler}>Follow</button>
+                        i.followed
+                            ? <button className={styles.button} onClick={unsubscribeHandler}>unFollow</button>
+                            : <button className={styles.button} onClick={subscribeHandler}>Follow</button>
                     }
                 </div>
                 <div className={styles.descrWrapper}>
@@ -30,10 +46,10 @@ export const Users: React.FC<UsersPropsType> = (props) => {
                         {i.name}
                     </div>
                     <div>
-                        {i.location.country}
+                        location.country
                     </div>
                     <div>
-                        {i.location.city}
+                        location.city
                     </div>
                     <div>
                         {i.status}
@@ -44,8 +60,21 @@ export const Users: React.FC<UsersPropsType> = (props) => {
     });
 
     return (
-        <div className={styles.wrapper}>
-            {users}
+        <div>
+            <div className={styles.pagesWrapper}>
+                {
+                    pages.map(i => {
+                        let activeClassName = styles.pageNumber;
+                        if (props.currentPage === i) {
+                            activeClassName = styles.activePageNumber;
+                        }
+                        return <span key={i}
+                                     className={activeClassName}
+                                     onClick={() => props.onPageChange(i)}>{i}</span>
+                    })
+                }
+            </div>
+            <div className={styles.wrapper}>{users}</div>
         </div>
     );
-};
+}

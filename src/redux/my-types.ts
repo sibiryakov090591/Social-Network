@@ -31,18 +31,21 @@ export type MessagesDataType = {
 };
 
 export type UsersType = {
-    users: UserItemType[]
+    users: UserItemType[] | []
+    pageSize: number
+    totalUsersCount: number
+    currentPage: number | string
 };
 export type UserItemType = {
-    id: string
+    id: number | string
     name: string
-    photoUrl: string
-    isFriend: boolean
-    location: {
-        country: string
-        city: string
+    uniqueUrlName: string | null
+    photos: {
+        small: string | null
+        large: string | null
     }
-    status: string
+    status: string | null
+    followed: boolean
 };
 
 
@@ -51,6 +54,8 @@ export type ActionType = {
     post?: string
     text?: string
     message?: string
-    userId?: string
-    users?: UsersType[]
+    userId?: string | number
+    users?: UserItemType[]
+    pageNumber: number
+    totalCount: number
 };

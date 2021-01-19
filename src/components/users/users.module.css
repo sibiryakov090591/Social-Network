@@ -7,6 +7,22 @@
     gap: 20px;
 }
 
+.pagesWrapper {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.pageNumber {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.activePageNumber {
+    margin: 0 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .itemWrapper {
     display: flex;
 

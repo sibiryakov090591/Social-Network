@@ -1,58 +1,164 @@
 import {v1} from "uuid";
-import usersReduser, { ADD_MESSAGE, CHANGE_MY_MESSAGE_TEXT } from "./users-reduser";
-import {ActionType, DialogsType} from "../my-types";
+import usersReduser, {SET_USERS, SUBSCRIBE_TO_IT, UNSUBSCRIBE_TO_IT} from "./users-reduser";
+import {ActionType, UserItemType, UsersType} from "../my-types";
 
-test("My message added", () => {
+test("Set users data", () => {
 
-    const state: DialogsType = {
-        peopleData: [
-            {name: "Anna", id: v1()},
-            {name: "Andrey", id: v1()},
-            {name: "John", id: v1()},
-            {name: "Dima", id: v1()},
-            {name: "Lio", id: v1()}
-        ],
-        messagesData: [
-            {id: v1(), message: "Hi!"},
-            {id: v1(), message: "HELLO! How a u??"},
-            {id: v1(), message: "Great !! :))"}
-        ],
-        newMessageText: "Test message"
+    const data: UserItemType[] = [
+        {
+            id: v1(),
+            name: "Alex",
+            uniqueUrlName: "Alex",
+            photos: {
+                small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+            },
+            followed: false,
+            status: "Test status"
+        },
+        {
+            id: v1(),
+            name: "Alex",
+            uniqueUrlName: "Alex",
+            photos: {
+                small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+            },
+            followed: false,
+            status: "Test status"
+        },
+        {
+            id: v1(),
+            name: "Alex",
+            uniqueUrlName: "Alex",
+            photos: {
+                small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+            },
+            followed: false,
+            status: "Test status"
+        },
+    ];
+
+    const state: UsersType = {
+        users: [],
+        pageSize: 4,
+        totalUsersCount: 20,
+        currentPage: 1
     };
+
     const action: ActionType = {
-        type: ADD_MESSAGE
+        type: SET_USERS,
+        users: data
     };
 
     const newState = usersReduser(state, action);
 
-    expect(newState.messagesData.length).toBe(4);
-    expect(newState.messagesData[newState.messagesData.length - 1].message).toBe("Test message");
-    expect(newState.newMessageText).toBe("");
-})
+    expect(newState.users?.length).toBe(3);
+});
 
-test("newPostText is changed", () => {
+test("Subscribe to user", () => {
 
-    const state: DialogsType = {
-        peopleData: [
-            {name: "Anna", id: v1()},
-            {name: "Andrey", id: v1()},
-            {name: "John", id: v1()},
-            {name: "Dima", id: v1()},
-            {name: "Lio", id: v1()}
+    const state: UsersType = {
+        users: [
+            {
+                id: v1(),
+                name: "Alex",
+                uniqueUrlName: "Alex",
+                photos: {
+                    small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                    large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+                },
+                followed: false,
+                status: "Test status"
+            },
+            {
+                id: v1(),
+                name: "Alex",
+                uniqueUrlName: "Alex",
+                photos: {
+                    small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                    large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+                },
+                followed: false,
+                status: "Test status"
+            },
+            {
+                id: v1(),
+                name: "Alex",
+                uniqueUrlName: "Alex",
+                photos: {
+                    small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                    large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+                },
+                followed: false,
+                status: "Test status"
+            },
         ],
-        messagesData: [
-            {id: v1(), message: "Hi!"},
-            {id: v1(), message: "HELLO! How a u??"},
-            {id: v1(), message: "Great !! :))"}
-        ],
-        newMessageText: ""
+        pageSize: 4,
+        totalUsersCount: 20,
+        currentPage: 1
     };
+
     const action: ActionType = {
-        type: CHANGE_MY_MESSAGE_TEXT,
-        text: "Test message"
+        type: SUBSCRIBE_TO_IT,
+        userId: state.users[0].id
     };
 
     const newState = usersReduser(state, action);
 
-    expect(newState.newMessageText).toBe("Test message");
-})
+    expect(newState.users[0].isFriend).toBe(true);
+});
+
+test("unSubscribe to user", () => {
+
+    const state: UsersType = {
+        users: [
+            {
+                id: v1(),
+                name: "Alex",
+                uniqueUrlName: "Alex",
+                photos: {
+                    small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                    large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+                },
+                followed: false,
+                status: "Test status"
+            },
+            {
+                id: v1(),
+                name: "Alex",
+                uniqueUrlName: "Alex",
+                photos: {
+                    small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                    large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+                },
+                followed: false,
+                status: "Test status"
+            },
+            {
+                id: v1(),
+                name: "Alex",
+                uniqueUrlName: "Alex",
+                photos: {
+                    small: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj",
+                    large: "https://yt3.ggpht.com/ytc/AAUvwnh9X4yxoYU_eDNNrGxKGKtdBRYg-LLog_4r83mJQw=s900-c-k-c0x00ffffff-no-rj"
+                },
+                followed: false,
+                status: "Test status"
+            },
+        ],
+        pageSize: 4,
+        totalUsersCount: 20,
+        currentPage: 1
+    };
+
+    const action: ActionType = {
+        type: UNSUBSCRIBE_TO_IT,
+        userId: state.users[1].id
+    };
+
+    const newState = usersReduser(state, action);
+
+    expect(newState.users[1].isFriend).toBe(false);
+});

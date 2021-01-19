@@ -4,32 +4,16 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/dialog-item/dialogItem.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/people/people.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/people/people.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/search/search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/search/search.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/music/music.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/music/music.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/music/music.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/music/music.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/news/news.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/news.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/news/news.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news/news.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/settings/settings.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/settings.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/settings/settings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/settings/settings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/my-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/my-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +82,7 @@
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile\my-posts" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.My post added">
+  <component name="RunManager" selected="npm.start">
     <configuration name="My post added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -109,6 +93,32 @@
       <test-file value="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" />
       <test-names>
         <test-name value="My post added" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Subscribe to user" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" />
+      <test-names>
+        <test-name value="Subscribe to user" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="unSubscribe to user" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" />
+      <test-names>
+        <test-name value="unSubscribe to user" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -125,9 +135,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="Jest.unSubscribe to user" />
+        <item itemvalue="Jest.Subscribe to user" />
         <item itemvalue="Jest.My post added" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -187,7 +197,9 @@
       <workItem from="1610794657978" duration="2894000" />
       <workItem from="1610797599409" duration="4264000" />
       <workItem from="1610801926407" duration="1262000" />
-      <workItem from="1610953940764" duration="4561000" />
+      <workItem from="1610953940764" duration="17666000" />
+      <workItem from="1611059169084" duration="921000" />
+      <workItem from="1611060109383" duration="9106000" />
     </task>
     <servers />
   </component>

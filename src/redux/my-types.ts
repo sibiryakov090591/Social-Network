@@ -35,6 +35,7 @@ export type UsersType = {
     pageSize: number
     totalUsersCount: number
     currentPage: number | string
+    isLoading: boolean
 };
 export type UserItemType = {
     id: number | string
@@ -56,6 +57,7 @@ export type ActionType = {
     message?: string
     userId?: string | number
     users?: UserItemType[]
-    pageNumber: number
-    totalCount: number
+    pageNumber?: number
+    totalCount?: number
+    isLoading?: boolean
 };

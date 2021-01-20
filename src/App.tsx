@@ -6,14 +6,14 @@ import {Navbar} from "./components/navbar/navbar";
 import {News} from "./components/news/news";
 import {Music} from "./components/music/music";
 import {Settings} from "./components/settings/settings";
-import {ProfileContainer} from "./components/profile/profile-container";
+import ProfileContainer from "./components/profile/profile-container";
 import {DialogsContainer} from './components/dialogs/dialogs-container';
 import UsersContainer from './components/users/users-container';
 
 const App = () => {
     return (
         <BrowserRouter>
-            <div className="App-wrapper">w
+            <div className="App-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="App-wrapper-content">

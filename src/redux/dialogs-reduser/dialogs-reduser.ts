@@ -20,7 +20,7 @@ const initialState: DialogsType = {
 export const ADD_MESSAGE = "ADD_MESSAGE";
 export const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
 
-const dialogsReduser = (state: DialogsType = initialState, action: ActionType) => {
+const dialogsReduser = (state = initialState, action: ActionType) => {
 
     switch (action.type) {
         case ADD_MESSAGE:

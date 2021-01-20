@@ -3,7 +3,25 @@ import {connect} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
 import {Dispatch} from "redux";
 import {addPostActionCreator, updatePostActionCreator} from "../../redux/profile-reduser/profile-reduser";
+import {MyPostsInfoDataType, ProfileInfoDataType} from "../../redux/my-types";
 import {Profile} from "./profile";
+
+type PropsType = {
+    profileInfoData: ProfileInfoDataType
+    myPosts: Array<MyPostsInfoDataType>
+    currentValue: string
+    addPost: () => void
+    onChangePost: (text: string) => void
+}
+
+class ProfileContainer extends React.Component<PropsType, {}> {
+
+    render() {
+        return (
+            <Profile {...this.props}/>
+        )
+    }
+}
 
 const mapStateToProps = (state: GlobalStateType) => {
     return {
@@ -20,4 +38,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     }
 };
 
-export const ProfileContainer = connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);

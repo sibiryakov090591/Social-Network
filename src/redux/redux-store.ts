@@ -6,7 +6,7 @@ import usersReduser from "./users-reduser/users-reduser";
 const rootReducer = combineReducers({
     profile: profileReduser,
     dialogs: dialogsReduser,
-    users: usersReduser
+    users: usersReduser,
 });
 
 type RootReducerType = typeof rootReducer;

@@ -1,9 +1,9 @@
 import React from 'react';
-import { GlobalStateType } from "../../redux/redux-store";
-import { Dispatch } from "redux";
-import { connect } from "react-redux";
-import { addMessageActionCreator, updateMessageActionCreator } from "../../redux/dialogs-reduser/dialogs-reduser";
-import { Dialogs } from './dialogs';
+import {GlobalStateType} from "../../redux/redux-store";
+import {Dispatch} from "redux";
+import {connect} from "react-redux";
+import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/dialogs-reduser/dialogs-reduser";
+import {Dialogs} from './dialogs';
 
 const mapStateToProps = (state: GlobalStateType) => {
     return {

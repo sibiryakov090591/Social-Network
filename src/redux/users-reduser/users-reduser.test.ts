@@ -44,7 +44,8 @@ test("Set users data", () => {
         users: [],
         pageSize: 4,
         totalUsersCount: 20,
-        currentPage: 1
+        currentPage: 1,
+        isLoading: false
     };
 
     const action: ActionType = {
@@ -97,7 +98,8 @@ test("Subscribe to user", () => {
         ],
         pageSize: 4,
         totalUsersCount: 20,
-        currentPage: 1
+        currentPage: 1,
+        isLoading: false
     };
 
     const action: ActionType = {
@@ -150,7 +152,8 @@ test("unSubscribe to user", () => {
         ],
         pageSize: 4,
         totalUsersCount: 20,
-        currentPage: 1
+        currentPage: 1,
+        isLoading: false
     };
 
     const action: ActionType = {

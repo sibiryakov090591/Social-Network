@@ -1,10 +1,10 @@
-import React, { ChangeEvent } from "react";
+import React, {ChangeEvent} from "react";
 import styles from "./my-posts.module.css";
-import { MyPostsInfoDataType } from "../../../redux/my-types";
-import { Post } from "./post/post";
+import {ProfilePostsType} from "../../../redux/my-types";
+import {Post} from "./post/post";
 
 type MyPostsType = {
-    myPosts: Array<MyPostsInfoDataType>
+    myPosts: ProfilePostsType[]
     onChangePost: (text: string) => void
     addPost: () => void
     currentValue: string
@@ -14,6 +14,7 @@ export const MyPosts: React.FC<MyPostsType> = (props) => {
 
     const allPosts = props.myPosts.map(i =>
         <Post id={i.id}
+              key={i.id}
               message={i.message}
               likesCount={i.likesCount}
         />);

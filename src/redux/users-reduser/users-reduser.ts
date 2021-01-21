@@ -1,11 +1,11 @@
 import {ActionType, UserItemType, UsersType} from "../my-types";
 
 const initialState: UsersType = {
-    users: [],
+    users: null,
     pageSize: 6,
     totalUsersCount: 0,
     currentPage: 1,
-    isLoading: false
+    isLoading: true
 };
 
 export const SUBSCRIBE_TO_IT = "SUBSCRIBE_TO_IT";
@@ -21,10 +21,9 @@ const usersReduser = (state = initialState, action: ActionType) => {
 
     switch (action.type) {
         case SUBSCRIBE_TO_IT:
-            if (state.users.length > 0) {
+            if (state.users) {
                 return {
                     ...state,
-                    // @ts-ignore
                     users: state.users.map(i => {
                         if (i.id === action.userId) {
                             return {
@@ -40,10 +39,9 @@ const usersReduser = (state = initialState, action: ActionType) => {
 
 
         case UNSUBSCRIBE_TO_IT:
-            if (state.users.length > 0) {
+            if (state.users) {
                 return {
                     ...state,
-                    // @ts-ignore
                     users: state.users.map(i => {
                         if (i.id === action.userId) {
                             return {

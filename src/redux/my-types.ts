@@ -1,21 +1,37 @@
-// Types
+// Profile
 export type ProfileType = {
-    profileInfoData: ProfileInfoDataType
-    myPostsInfoData: MyPostsInfoDataType[]
-    newPostText: string
+    profileInfo: ProfileInfoType | null
+    profilePosts: ProfilePostsType[]
+    currentPostValue: string
 };
-export type ProfileInfoDataType = {
-    firstName: string
-    lastName: string
-    birthday: string
-    avatar: string
+export type ProfileInfoType = {
+    aboutMe: string | null
+    contacts: {
+        facebook: string | null
+        website: string | null
+        vk: string | null
+        twitter: string | null
+        instagram: string | null
+        youtube: string | null
+        github: string | null
+        mainLink: string | null
+    }
+    lookingForAJob: boolean
+    lookingForAJobDescription: string | null
+    fullName: string | null
+    userId: number | string
+    photos: {
+        small: string | null
+        large: string | null
+    }
 };
-export type MyPostsInfoDataType = {
+export type ProfilePostsType = {
     id: string
     message: string
     likesCount: number
 };
 
+// Dialogs and messages
 export type DialogsType = {
     peopleData: PeopleDataType[]
     messagesData: MessagesDataType[]
@@ -30,8 +46,9 @@ export type MessagesDataType = {
     message: string
 };
 
+// Users
 export type UsersType = {
-    users: UserItemType[] | []
+    users: UserItemType[] | null
     pageSize: number
     totalUsersCount: number
     currentPage: number | string
@@ -49,7 +66,7 @@ export type UserItemType = {
     followed: boolean
 };
 
-
+// Action
 export type ActionType = {
     type: string
     post?: string
@@ -60,4 +77,5 @@ export type ActionType = {
     pageNumber?: number
     totalCount?: number
     isLoading?: boolean
+    profile?: any
 };

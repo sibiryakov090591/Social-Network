@@ -1,12 +1,12 @@
 import React from "react";
-import { ProfileInfo } from "./profile-info/profileInfo";
-import { MyPosts } from "./my-posts/my-posts";
-import { MyPostsInfoDataType, ProfileInfoDataType } from "../../redux/my-types";
+import {ProfileInfo} from "./profile-info/profileInfo";
+import {MyPosts} from "./my-posts/my-posts";
+import {ProfileInfoType, ProfilePostsType} from "../../redux/my-types";
 
 type ProfilePropsType = {
-    profileInfoData: ProfileInfoDataType
-    myPosts: Array<MyPostsInfoDataType>
-    currentValue: string
+    profileInfo: ProfileInfoType
+    profilePosts: ProfilePostsType[]
+    currentPostValue: string
     addPost: () => void
     onChangePost: (text: string) => void
 };
@@ -14,9 +14,9 @@ type ProfilePropsType = {
 export const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <div>
-            <ProfileInfo profileInfoData={props.profileInfoData}/>
-            <MyPosts myPosts={props.myPosts}
-                     currentValue={props.currentValue}
+            <ProfileInfo profileInfo={props.profileInfo}/>
+            <MyPosts myPosts={props.profilePosts}
+                     currentValue={props.currentPostValue}
                      addPost={props.addPost}
                      onChangePost={props.onChangePost}
             />

@@ -1,31 +1,31 @@
 import React from "react";
 import styles from "./profileInfo.module.css";
-import { ProfileInfoDataType } from "../../../redux/my-types";
+import {ProfileInfoType} from "../../../redux/my-types";
+import {Preloader} from "../../preloader/preloader";
 
-type ProfileInfoPropsType = {
-    profileInfoData: ProfileInfoDataType
+type PropsType = {
+    profileInfo: ProfileInfoType
 };
 
-export const ProfileInfo: React.FC<ProfileInfoPropsType> = (props) => {
+export const ProfileInfo: React.FC<PropsType> = (props) => {
+
+    if (!props.profileInfo) return <Preloader />
+
     return (
-        <div className={styles.portfolio_wrapper}>
+        <div className={styles.profile_wrapper}>
             <img className={styles.avatar}
-                 src={props.profileInfoData.avatar}
-                 alt="my-avatar"
+                 src={props.profileInfo.photos.large || props.profileInfo.photos.small || "ava.jpg"}
+                 alt="avatar"
             />
 
             <div className={styles.descr}>
                 <div className={styles.descr_item}>
-                    <span className={styles.span}>Firstname:</span>
-                    {props.profileInfoData.firstName}
+                    <span className={styles.span}>Name:</span>
+                    {props.profileInfo.fullName}
                 </div>
                 <div className={styles.descr_item}>
-                    <span className={styles.span}>Lastname:</span>
-                    {props.profileInfoData.lastName}
-                </div>
-                <div className={styles.descr_item}>
-                    <span className={styles.span}>Birthday:</span>
-                    {props.profileInfoData.birthday}
+                    <span className={styles.span}>About me:</span>
+                    {props.profileInfo.aboutMe}
                 </div>
             </div>
         </div>

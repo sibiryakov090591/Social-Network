@@ -4,16 +4,15 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs-container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/my-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/my-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +200,7 @@
       <workItem from="1610953940764" duration="17666000" />
       <workItem from="1611059169084" duration="921000" />
       <workItem from="1611060109383" duration="9106000" />
-      <workItem from="1611076009521" duration="11698000" />
+      <workItem from="1611076009521" duration="21892000" />
     </task>
     <servers />
   </component>

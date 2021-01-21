@@ -37,47 +37,49 @@ export const Users: React.FC<PropsType> = (props) => {
                      onClick={() => props.onPageChange(i)}>{i}</span>
     });
 
-    const users = props.usersData.map(i => {
-        const unsubscribeHandler = () => props.unsubscribeHandler(i.id);
-        const subscribeHandler = () => props.subscribeHandler(i.id);
-        const photoUrl = i.photos.large || i.photos.small || "ava.jpg";
-        return (
-            props.isLoading
-                ?
-                <div className={styles.itemWrapper} key={i.id}>
-                    <Preloader/>
-                </div>
-                :
-                <div className={styles.itemWrapper} key={i.id}>
-                    <div className={styles.buttonWrapper}>
-                        <div className={styles.avatarWrapper}>
-                            <NavLink to={`/profile/${i.id}`}>
-                                <img className={styles.avatar} src={photoUrl} alt="avatar"/>
-                            </NavLink>
-                        </div>
-                        {
-                            i.followed
-                                ? <button className={styles.button} onClick={unsubscribeHandler}>unFollow</button>
-                                : <button className={styles.button} onClick={subscribeHandler}>Follow</button>
-                        }
+    const users = props.usersData
+        ? props.usersData.map(i => {
+            const unsubscribeHandler = () => props.unsubscribeHandler(i.id);
+            const subscribeHandler = () => props.subscribeHandler(i.id);
+            const photoUrl = i.photos.large || i.photos.small || "ava.jpg";
+            return (
+                props.isLoading
+                    ?
+                    <div className={styles.itemWrapper} key={i.id}>
+                        <Preloader/>
                     </div>
-                    <div className={styles.descrWrapper}>
-                        <div>
-                            {i.name}
+                    :
+                    <div className={styles.itemWrapper} key={i.id}>
+                        <div className={styles.buttonWrapper}>
+                            <div className={styles.avatarWrapper}>
+                                <NavLink to={`/profile/${i.id}`}>
+                                    <img className={styles.avatar} src={photoUrl} alt="avatar"/>
+                                </NavLink>
+                            </div>
+                            {
+                                i.followed
+                                    ? <button className={styles.button} onClick={unsubscribeHandler}>unFollow</button>
+                                    : <button className={styles.button} onClick={subscribeHandler}>Follow</button>
+                            }
                         </div>
-                        <div>
-                            location.country
-                        </div>
-                        <div>
-                            location.city
-                        </div>
-                        <div>
-                            {i.status}
+                        <div className={styles.descrWrapper}>
+                            <div>
+                                {i.name}
+                            </div>
+                            <div>
+                                location.country
+                            </div>
+                            <div>
+                                location.city
+                            </div>
+                            <div>
+                                {i.status}
+                            </div>
                         </div>
                     </div>
-                </div>
-        );
-    });
+            );
+        })
+        : <Preloader />;
 
     return (
         <div>

@@ -5,7 +5,7 @@ import {ActionType, ProfileType} from "../my-types";
 test("My post added", () => {
 
     const state: ProfileType = {
-        profileInfoData: {
+        profileInfo: {
             firstName: "Andrew",
             lastName: "Sibiryakov",
             birthday: "9 may 1991",
@@ -44,7 +44,7 @@ test("My post added", () => {
 test("newPostText is changed", () => {
 
     const state: ProfileType = {
-        profileInfoData: {
+        profileInfo: {
             firstName: "Andrew",
             lastName: "Sibiryakov",
             birthday: "9 may 1991",

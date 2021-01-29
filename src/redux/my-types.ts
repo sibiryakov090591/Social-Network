@@ -1,7 +1,15 @@
+// auth
+export type AuthType = {
+    id: string | null
+    login: string | null
+    email: string | null
+    isAuth: boolean
+};
+
 // Profile
 export type ProfileType = {
     profileInfo: ProfileInfoType | null
-    profilePosts: ProfilePostsType[]
+    profilePosts: ProfilePostsType[] | null
     currentPostValue: string
 };
 export type ProfileInfoType = {
@@ -53,6 +61,7 @@ export type UsersType = {
     totalUsersCount: number
     currentPage: number | string
     isLoading: boolean
+    followingProgress: number[] | string[] | []
 };
 export type UserItemType = {
     id: number | string
@@ -77,5 +86,6 @@ export type ActionType = {
     pageNumber?: number
     totalCount?: number
     isLoading?: boolean
-    profile?: any
+    profile?: ProfileInfoType
+    data?: AuthType
 };

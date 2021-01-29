@@ -1,32 +1,34 @@
-import React from "react";
+import React, {ComponentType} from "react";
 import {connect} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
 import {Dispatch} from "redux";
 import {
-    addPostActionCreator,
-    setUserProfileActionCreator,
-    updatePostActionCreator
-} from "../../redux/profile-reduser/profile-reduser";
+    addPost,
+    setUserProfile,
+    setUserProfileThunkCreator,
+    updatePost
+} from "../../redux/profile-reducer/profile-reducer";
 import {ProfileInfoType, ProfilePostsType} from "../../redux/my-types";
 import {Profile} from "./profile";
 import axios from "axios";
+import {RouteComponentProps, withRouter } from "react-router-dom";
+import {profileAPI} from "../../api/api";
 
 type PropsType = {
-    profileInfo: ProfileInfoType
-    profilePosts: ProfilePostsType[]
+    profileInfo: ProfileInfoType | null
+    profilePosts: ProfilePostsType[] | null
     currentPostValue: string
     addPost: () => void
     onChangePost: (text: string) => void
-    setUserProfile: (profile: any) => void
+    setUserProfile: (userId: number | string) => void
 }
 
-class ProfileContainer extends React.Component<PropsType, {}> {
+class ProfileContainer extends React.Component<PropsType & RouteComponentProps<{userId?: string}>> {
 
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`)
-            .then(({data}) => {
-                this.props.setUserProfile(data);
-            });
+        let userId = this.props.match.params.userId;
+        if (!userId) userId = "14405";
+        this.props.setUserProfile(userId)
     }
 
     render() {
@@ -51,10 +53,12 @@ const mapStateToProps = (state: GlobalStateType) => {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
     return {
-        addPost: () => dispatch(addPostActionCreator()),
-        onChangePost: (text: string) => dispatch(updatePostActionCreator(text)),
-        setUserProfile: (profile: any) => dispatch(setUserProfileActionCreator(profile))
+        addPost: () => dispatch(addPost()),
+        onChangePost: (text: string) => dispatch(updatePost(text)),
+        setUserProfile: (userId: number | string) => dispatch(setUserProfileThunkCreator(userId))
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
+const ProfileContainerWithURLData = withRouter(ProfileContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainerWithURLData);

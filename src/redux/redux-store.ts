@@ -1,15 +1,18 @@
-import {combineReducers, createStore} from "redux";
-import profileReduser from "./profile-reduser/profile-reduser";
-import dialogsReduser from "./dialogs-reduser/dialogs-reduser";
-import usersReduser from "./users-reduser/users-reduser";
+import {applyMiddleware, combineReducers, createStore} from "redux";
+import profileReducer from "./profile-reducer/profile-reducer";
+import dialogsReducer from "./dialogs-reducer/dialogs-reducer";
+import usersReducer from "./users-reducer/users-reducer";
+import authReducer from "./auth/auth-reducer";
+import thunkMiddleware from "redux-thunk";
 
 const rootReducer = combineReducers({
-    profile: profileReduser,
-    dialogs: dialogsReduser,
-    users: usersReduser,
+    auth: authReducer,
+    profile: profileReducer,
+    dialogs: dialogsReducer,
+    users: usersReducer,
 });
 
 type RootReducerType = typeof rootReducer;
 export type GlobalStateType = ReturnType<RootReducerType>;
 
-export const store = createStore(rootReducer);
+export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));

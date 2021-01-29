@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import usersReduser, {SET_USERS, SUBSCRIBE_TO_IT, UNSUBSCRIBE_TO_IT} from "./users-reduser";
+import usersReducer, {SET_USERS, SUBSCRIBE_TO_IT, UNSUBSCRIBE_TO_IT} from "./users-reducer";
 import {ActionType, UserItemType, UsersType} from "../my-types";
 
 test("Set users data", () => {
@@ -39,9 +39,8 @@ test("Set users data", () => {
             status: "Test status"
         },
     ];
-
     const state: UsersType = {
-        users: [],
+        users: null,
         pageSize: 4,
         totalUsersCount: 20,
         currentPage: 1,
@@ -53,7 +52,7 @@ test("Set users data", () => {
         users: data
     };
 
-    const newState = usersReduser(state, action);
+    const newState = usersReducer(state, action);
 
     expect(newState.users?.length).toBe(3);
 });
@@ -107,9 +106,9 @@ test("Subscribe to user", () => {
         userId: state.users[0].id
     };
 
-    const newState = usersReduser(state, action);
+    const newState = usersReducer(state, action);
 
-    expect(newState.users[0].isFriend).toBe(true);
+    expect(newState.users[0].followed).toBe(true);
 });
 
 test("unSubscribe to user", () => {
@@ -161,7 +160,7 @@ test("unSubscribe to user", () => {
         userId: state.users[1].id
     };
 
-    const newState = usersReduser(state, action);
+    const newState = usersReducer(state, action);
 
-    expect(newState.users[1].isFriend).toBe(false);
+    expect(newState.users[1].followed).toBe(false);
 });

@@ -7,18 +7,23 @@
     padding: 0 20px;
 }
 
-.header__logo {
+.logo {
     display: flex;
     align-items: center;
 }
 
-.header__logo_img {
+.logo_img {
     width: 60px;
     height: 50px;
 }
 
-.header__logo_text {
+.logo_text {
     color: var(--main-text-color);
     font-size: 23px;
     margin-left: -10px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
 }

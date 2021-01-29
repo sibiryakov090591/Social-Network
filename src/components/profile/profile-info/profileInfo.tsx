@@ -4,7 +4,7 @@ import {ProfileInfoType} from "../../../redux/my-types";
 import {Preloader} from "../../preloader/preloader";
 
 type PropsType = {
-    profileInfo: ProfileInfoType
+    profileInfo: ProfileInfoType | null
 };
 
 export const ProfileInfo: React.FC<PropsType> = (props) => {

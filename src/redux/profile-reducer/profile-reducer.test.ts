@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import profileReduser, { ADD_POST, CHANGE_MY_POST_TEXT } from "./profile-reduser";
+import profileReducer, { ADD_POST, CHANGE_MY_POST_TEXT } from "./profile-reducer";
 import {ActionType, ProfileType} from "../my-types";
 
 test("My post added", () => {
@@ -34,7 +34,7 @@ test("My post added", () => {
         type: ADD_POST
     };
 
-    const newState = profileReduser(state, action);
+    const newState = profileReducer(state, action);
 
     expect(newState.myPostsInfoData.length).toBe(4);
     expect(newState.myPostsInfoData[0].message).toBe("Test message");
@@ -74,7 +74,7 @@ test("newPostText is changed", () => {
         text: "Test message"
     };
 
-    const newState = profileReduser(state, action);
+    const newState = profileReducer(state, action);
 
     expect(newState.newPostText).toBe("Test message");
 });

@@ -4,7 +4,7 @@ import {ProfilePostsType} from "../../../redux/my-types";
 import {Post} from "./post/post";
 
 type MyPostsType = {
-    myPosts: ProfilePostsType[]
+    myPosts: ProfilePostsType[] | null
     onChangePost: (text: string) => void
     addPost: () => void
     currentValue: string
@@ -12,12 +12,16 @@ type MyPostsType = {
 
 export const MyPosts: React.FC<MyPostsType> = (props) => {
 
-    const allPosts = props.myPosts.map(i =>
-        <Post id={i.id}
-              key={i.id}
-              message={i.message}
-              likesCount={i.likesCount}
-        />);
+    let allPosts = null;
+
+    if (props.myPosts) {
+        allPosts = props.myPosts.map(i =>
+            <Post id={i.id}
+                  key={i.id}
+                  message={i.message}
+                  likesCount={i.likesCount}
+            />);
+    }
 
     const addPost = () => {
         if (props.currentValue.trim()) {

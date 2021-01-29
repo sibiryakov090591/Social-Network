@@ -2,7 +2,7 @@ import React from 'react';
 import {GlobalStateType} from "../../redux/redux-store";
 import {Dispatch} from "redux";
 import {connect} from "react-redux";
-import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/dialogs-reduser/dialogs-reduser";
+import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/dialogs-reducer/dialogs-reducer";
 import {Dialogs} from './dialogs';
 
 const mapStateToProps = (state: GlobalStateType) => {

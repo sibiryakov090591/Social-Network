@@ -2,18 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/header/header-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs-container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/messages/messages-container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/users-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer/dialogs-reduser.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/dialogs-reduser/dialogs-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs-reducer/dialogs-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/my-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/my-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile-reduser/profile-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer/users-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users-reduser/users-reduser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer/users-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +94,7 @@
       <recent name="C:\INCUBATOR\social\my-app\src\components\profile\my-posts" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Jest.Subscribe to user">
     <configuration name="My post added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -134,9 +146,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Subscribe to user" />
         <item itemvalue="npm.start" />
         <item itemvalue="Jest.unSubscribe to user" />
-        <item itemvalue="Jest.Subscribe to user" />
         <item itemvalue="Jest.My post added" />
         <item itemvalue="npm.start" />
       </list>
@@ -200,7 +212,10 @@
       <workItem from="1610953940764" duration="17666000" />
       <workItem from="1611059169084" duration="921000" />
       <workItem from="1611060109383" duration="9106000" />
-      <workItem from="1611076009521" duration="21892000" />
+      <workItem from="1611076009521" duration="24098000" />
+      <workItem from="1611574334709" duration="2315000" />
+      <workItem from="1611836155957" duration="5410000" />
+      <workItem from="1611863124492" duration="32191000" />
     </task>
     <servers />
   </component>

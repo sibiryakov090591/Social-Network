@@ -6,16 +6,14 @@ import {NavLink} from 'react-router-dom';
 
 type PropsType = {
     usersData: UserItemType[]
-    subscribeHandler: (id: string | number) => void
-    unsubscribeHandler: (id: string | number) => void
-    setUsers: (users: UserItemType[]) => void
-    setCurrentPage: (id: number) => void
-    setTotalCount: (id: number) => void
+    follow: (id: string | number) => void
+    unfollow: (id: string | number) => void
     onPageChange: (id: number) => void
     pageSize: number
     totalUsersCount: number
     currentPage: number
     isLoading: boolean
+    isFollowingProgress: [] | number[]
 };
 
 export const Users: React.FC<PropsType> = (props) => {
@@ -25,7 +23,6 @@ export const Users: React.FC<PropsType> = (props) => {
     for (let i = 1; i <= howManyPages; i++) {
         pagesArray.push(i);
     }
-    ;
 
     const pages = pagesArray.map(i => {
         let activeClassName = styles.pageNumber;
@@ -39,9 +36,11 @@ export const Users: React.FC<PropsType> = (props) => {
 
     const users = props.usersData
         ? props.usersData.map(i => {
-            const unsubscribeHandler = () => props.unsubscribeHandler(i.id);
-            const subscribeHandler = () => props.subscribeHandler(i.id);
+
+            const unfollow = () => props.unfollow(i.id);
+            const follow = () => props.follow(i.id);
             const photoUrl = i.photos.large || i.photos.small || "ava.jpg";
+
             return (
                 props.isLoading
                     ?
@@ -58,8 +57,12 @@ export const Users: React.FC<PropsType> = (props) => {
                             </div>
                             {
                                 i.followed
-                                    ? <button className={styles.button} onClick={unsubscribeHandler}>unFollow</button>
-                                    : <button className={styles.button} onClick={subscribeHandler}>Follow</button>
+                                    ? <button disabled={props.isFollowingProgress.some(id => id === i.id)}
+                                              className={styles.button}
+                                              onClick={unfollow}>unFollow</button>
+                                    : <button disabled={props.isFollowingProgress.some(id => id === i.id)}
+                                              className={styles.button}
+                                              onClick={follow}>Follow</button>
                             }
                         </div>
                         <div className={styles.descrWrapper}>

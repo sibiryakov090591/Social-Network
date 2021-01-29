@@ -4,8 +4,8 @@ import {MyPosts} from "./my-posts/my-posts";
 import {ProfileInfoType, ProfilePostsType} from "../../redux/my-types";
 
 type ProfilePropsType = {
-    profileInfo: ProfileInfoType
-    profilePosts: ProfilePostsType[]
+    profileInfo: ProfileInfoType | null
+    profilePosts: ProfilePostsType[] | null
     currentPostValue: string
     addPost: () => void
     onChangePost: (text: string) => void

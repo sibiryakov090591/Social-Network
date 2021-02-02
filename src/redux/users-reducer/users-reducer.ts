@@ -96,15 +96,15 @@ const usersReducer = (state = initialState, action: ActionType) => {
     }
 }
 
-export const followSuccess = (id: string | number): ActionType => ({
+export const followSuccess = (id: string | number) => ({
     type: FOLLOW,
     userId: id
 });
-export const unfollowSuccess = (id: string | number): ActionType => ({
+export const unfollowSuccess = (id: string | number) => ({
     type: UNFOLLOW,
     userId: id
 });
-export const setUsers = (users: UserItemType[]): ActionType => ({
+export const setUsers = (users: UserItemType[]) => ({
     type: SET_USERS,
     users
 });

@@ -26,5 +26,11 @@ export const profileAPI = {
     },
     setUserProfile (userId: number | string) {
         return instance.get(`profile/` + userId);
+    },
+    setUserStatus (userId: number | string) {
+        return instance.get(`profile/status/` + userId);
+    },
+    updateUserStatus (status: string) {
+        return instance.put(`profile/status`, { status: status });
     }
 };

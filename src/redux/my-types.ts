@@ -11,6 +11,7 @@ export type ProfileType = {
     profileInfo: ProfileInfoType | null
     profilePosts: ProfilePostsType[] | null
     currentPostValue: string
+    profileStatus: string
 };
 export type ProfileInfoType = {
     aboutMe: string | null
@@ -88,4 +89,5 @@ export type ActionType = {
     isLoading?: boolean
     profile?: ProfileInfoType
     data?: AuthType
+    status?: string
 };

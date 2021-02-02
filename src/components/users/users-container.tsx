@@ -2,11 +2,10 @@ import {Dispatch} from "redux";
 import {
     getUsersThunkCreator,
     setCurrentPage,
-    setIsFollowingProgress,
     setIsLoading,
     setUsers,
-    followSuccess,
-    unfollowSuccess, followThunkCreator, unfollowThunkCreator
+    followThunkCreator,
+    unfollowThunkCreator
 } from "../../redux/users-reducer/users-reducer";
 import {connect} from "react-redux";
 import {Users} from "./users";

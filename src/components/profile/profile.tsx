@@ -9,12 +9,17 @@ type ProfilePropsType = {
     currentPostValue: string
     addPost: () => void
     onChangePost: (text: string) => void
+    profileStatus: string
+    updateUserStatus: (status: string) => void
 };
 
 export const Profile: React.FC<ProfilePropsType> = (props) => {
     return (
         <div>
-            <ProfileInfo profileInfo={props.profileInfo}/>
+            <ProfileInfo profileInfo={props.profileInfo}
+                         profileStatus={props.profileStatus}
+                         updateUserStatus={props.updateUserStatus}
+            />
             <MyPosts myPosts={props.profilePosts}
                      currentValue={props.currentPostValue}
                      addPost={props.addPost}

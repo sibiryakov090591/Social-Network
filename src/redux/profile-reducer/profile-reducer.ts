@@ -2,6 +2,13 @@ import {v1} from "uuid";
 import {ActionType, ProfileInfoType, ProfilePostsType, ProfileType} from "../my-types";
 import {profileAPI} from "../../api/api";
 import {Dispatch} from "redux";
+import {ThunkAction} from "redux-thunk";
+import {GlobalStateType} from "../redux-store";
+
+export const ADD_POST = "ADD_POST";
+export const CHANGE_MY_POST_TEXT = "CHANGE_MY_POST_TEXT";
+export const SET_USER_PROFILE = "SET_USER_PROFILE";
+export const SET_USER_STATUS = "SET_USER_STATUS";
 
 const initialState: ProfileType = {
     profileInfo: null,
@@ -22,12 +29,9 @@ const initialState: ProfileType = {
             likesCount: 0
         }
     ],
-    currentPostValue: ""
+    currentPostValue: "",
+    profileStatus: ""
 };
-
-export const ADD_POST = "ADD_POST";
-export const CHANGE_MY_POST_TEXT = "CHANGE_MY_POST_TEXT";
-export const SET_USER_PROFILE = "SET_USER_PROFILE";
 
 const profileReducer = (state = initialState, action: ActionType) => {
 
@@ -51,7 +55,7 @@ const profileReducer = (state = initialState, action: ActionType) => {
                 return {
                     ...state,
                     currentPostValue: action.text
-                }
+                };
             } else return state;
 
         case SET_USER_PROFILE:
@@ -59,8 +63,20 @@ const profileReducer = (state = initialState, action: ActionType) => {
                 return {
                     ...state,
                     profileInfo: action.profile
-                }
+                };
             } else return state;
+
+        case SET_USER_STATUS:
+            if (action.status) {
+                return {
+                    ...state,
+                    profileStatus: action.status
+                };
+            } else return {
+                ...state,
+                profileStatus: ""
+            };
+
 
         default:
             return state;
@@ -68,21 +84,47 @@ const profileReducer = (state = initialState, action: ActionType) => {
 }
 
 export const addPost = (): ActionType => ({
-    type: "ADD_POST"
+    type: ADD_POST
 });
 export const updatePost = (text: string): ActionType => ({
-    type: "CHANGE_MY_POST_TEXT",
+    type: CHANGE_MY_POST_TEXT,
     text
 });
-export const setUserProfile = (profile: ProfileInfoType): ActionType => ({
-    type: "SET_USER_PROFILE",
+const setUserProfile = (profile: ProfileInfoType): ActionType => ({
+    type: SET_USER_PROFILE,
     profile
 });
 
-export const setUserProfileThunkCreator = (userId: number | string): any => (dispatch: Dispatch) => {
-    profileAPI.setUserProfile(userId).then(({data}) => {
-        dispatch(setUserProfile(data));
-    });
+const setUserStatus = (status: string): ActionType => ({
+    type: SET_USER_STATUS,
+    status
+});
+
+
+type ThunkType = ThunkAction<Promise<void>, GlobalStateType, unknown, ActionType>;
+
+export const setUserProfileThunkCreator = (userId: number | string): any => {
+    return async (dispatch: Dispatch) => {
+        profileAPI.setUserProfile(userId).then(({data}) => {
+            dispatch(setUserProfile(data));
+        });
+    }
+};
+
+export const setUserStatusThunkCreator = (userId: string | number): any => {
+    return async (dispatch: Dispatch) => {
+        profileAPI.setUserStatus(userId).then(({data}) => {
+            dispatch(setUserStatus(data));
+        })
+    }
+};
+
+export const updateUserStatusThunkCreator = (status: string): any => {
+    return async (dispatch: Dispatch) => {
+        profileAPI.updateUserStatus(status).then(({data}) => {
+            if (data.resultCode === 0) dispatch(setUserStatus(status));
+        })
+    }
 }
 
 export default profileReducer;

@@ -1,6 +1,9 @@
 import {v1} from "uuid";
 import {ActionType, DialogsType, MessagesDataType} from "../my-types";
 
+export const ADD_MESSAGE = "ADD_MESSAGE";
+export const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
+
 const initialState: DialogsType = {
     peopleData: [
         {name: "Anna", id: v1()},
@@ -16,9 +19,6 @@ const initialState: DialogsType = {
     ],
     newMessageText: ""
 };
-
-export const ADD_MESSAGE = "ADD_MESSAGE";
-export const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
 
 const dialogsReducer = (state = initialState, action: ActionType) => {
 
@@ -47,12 +47,12 @@ const dialogsReducer = (state = initialState, action: ActionType) => {
     }
 }
 
-export const addMessageActionCreator = () => ({
-    type: "ADD_MESSAGE"
+export const addMessageActionCreator = (): ActionType => ({
+    type: ADD_MESSAGE
 });
 
-export const updateMessageActionCreator = (text: string) => ({
-    type: "CHANGE_MY_MESSAGE_TEXT",
+export const updateMessageActionCreator = (text: string): ActionType => ({
+    type: CHANGE_MY_MESSAGE_TEXT,
     text: text
 });
 

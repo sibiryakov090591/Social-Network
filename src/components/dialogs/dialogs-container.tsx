@@ -1,9 +1,10 @@
 import React from 'react';
 import {GlobalStateType} from "../../redux/redux-store";
-import {Dispatch} from "redux";
+import {compose, Dispatch} from "redux";
 import {connect} from "react-redux";
 import {addMessageActionCreator, updateMessageActionCreator} from "../../redux/dialogs-reducer/dialogs-reducer";
 import {Dialogs} from './dialogs';
+import {withAuthRedirect} from '../../hok/withAuthRedirect';
 
 const mapStateToProps = (state: GlobalStateType) => {
     return {
@@ -20,4 +21,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     }
 };
 
-export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+export default compose(withAuthRedirect, connect(mapStateToProps, mapDispatchToProps))(Dialogs);

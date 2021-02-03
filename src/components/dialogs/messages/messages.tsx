@@ -1,22 +1,37 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import styles from "./messages.module.css";
-import { MessageItem } from "./messageItem/messageItem";
-import { MessagesDataType } from "../../../redux/my-types";
+import {MessageItem} from "./messageItem/messageItem";
+import {MessagesDataType} from "../../../redux/my-types";
+import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 
 type MessagesPropsType = {
     messagesData: Array<MessagesDataType>
-    addMessage: () => void
-    onChangeMyMessage: (text: string) => void
-    currentValue: string
+    addMessage: (text: string) => void
 };
 
-export const Messages:React.FC<MessagesPropsType> = (props) => {
+const MessageForm: React.FC<InjectedFormProps> = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit} className={styles.new_post_wrapper}>
+            <div>
+                <Field name={"message"} component={"textarea"} type={"textarea"} className={styles.post_message}/>
+            </div>
+            <div>
+                <button className={styles.post_btn}>
+                    Send
+                </button>
+            </div>
+        </form>
+    )
+};
 
-    const messagesArray = props.messagesData.map(i => <MessageItem id={i.id} message={i.message} />);
+const MessageReduxForm = reduxForm({form: "message"})(MessageForm);
 
-    const onChangeMessageText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        const text = e.currentTarget.value;
-        props.onChangeMyMessage(text);
+export const Messages: React.FC<MessagesPropsType> = (props) => {
+
+    const messagesArray = props.messagesData.map(i => <MessageItem id={i.id} message={i.message}/>);
+
+    const submitHandler = (data: {message?: string}) => {
+        if (data.message) props.addMessage(data.message.trim());
     };
 
     return (
@@ -24,16 +39,7 @@ export const Messages:React.FC<MessagesPropsType> = (props) => {
             <div className={styles.message}>
                 {messagesArray}
             </div>
-            <div className={styles.new_post_wrapper}>
-                <textarea className={styles.post_message}
-                          onChange={onChangeMessageText}
-                          value={props.currentValue}>
-                </textarea>
-                <button className={styles.post_btn}
-                        onClick={props.addMessage}>
-                    Send
-                </button>
-            </div>
+            <MessageReduxForm onSubmit={submitHandler}/>
         </div>
-    )
-}
+    );
+};

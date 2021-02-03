@@ -1,9 +1,6 @@
 import {v1} from "uuid";
 import {ActionType, DialogsType, MessagesDataType} from "../my-types";
 
-export const ADD_MESSAGE = "ADD_MESSAGE";
-export const CHANGE_MY_MESSAGE_TEXT = "CHANGE_MY_MESSAGE_TEXT";
-
 const initialState: DialogsType = {
     peopleData: [
         {name: "Anna", id: v1()},
@@ -16,44 +13,36 @@ const initialState: DialogsType = {
         {id: v1(), message: "Hi!"},
         {id: v1(), message: "HELLO! How a u??"},
         {id: v1(), message: "Great !! :))"}
-    ],
-    newMessageText: ""
+    ]
 };
 
-const dialogsReducer = (state = initialState, action: ActionType) => {
+const dialogsReducer = (state = initialState, action: ActionType): DialogsType => {
 
     switch (action.type) {
-        case ADD_MESSAGE:
-            const newMessage: MessagesDataType = {
-                id: v1(),
-                message: state.newMessageText
-            };
-            return {
-                ...state,
-                messagesData: [...state.messagesData, newMessage],
-                newMessageText: ""
-            };
-
-        case CHANGE_MY_MESSAGE_TEXT:
-            if (action.text !== undefined) {
+        case "ADD_MESSAGE":
+            if (action.text) {
+                const newMessage: MessagesDataType = {
+                    id: v1(),
+                    message: action.text
+                };
                 return {
                     ...state,
-                    newMessageText: action.text
-                }
-            } else return state
-
+                    messagesData: [...state.messagesData, newMessage]
+                };
+            } else return state;
 
         default: return state;
     }
 }
 
-export const addMessageActionCreator = (): ActionType => ({
-    type: ADD_MESSAGE
-});
+// Actions object:
+export const dialogsActions = {
+    addMessage: (text: string) => ({type: "ADD_MESSAGE", text} as const)
+};
 
-export const updateMessageActionCreator = (text: string): ActionType => ({
-    type: CHANGE_MY_MESSAGE_TEXT,
-    text: text
-});
+// Initial Global Type for Users reducer:
+type PropertiesType<T> = T extends {[key: string]: infer U} ? U : any;
+export type DialogsActionsType = ReturnType<PropertiesType<typeof dialogsActions>>;
+
 
 export default dialogsReducer;

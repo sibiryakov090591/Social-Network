@@ -1,18 +1,22 @@
-// auth
+import {AuthActionsType} from "./auth/auth-reducer";
+import {ProfileActionsType} from "./profile-reducer/profile-reducer";
+import {UsersActionsType} from "./users-reducer/users-reducer";
+import {DialogsActionsType} from "./dialogs-reducer/dialogs-reducer";
+
+// Auth
 export type AuthType = {
     id: string | null
     login: string | null
     email: string | null
     isAuth: boolean
-};
+}
 
 // Profile
 export type ProfileType = {
     profileInfo: ProfileInfoType | null
-    profilePosts: ProfilePostsType[] | null
-    currentPostValue: string
+    profilePosts: ProfilePostsType[] | []
     profileStatus: string
-};
+}
 export type ProfileInfoType = {
     aboutMe: string | null
     contacts: {
@@ -33,39 +37,38 @@ export type ProfileInfoType = {
         small: string | null
         large: string | null
     }
-};
+}
 export type ProfilePostsType = {
     id: string
     message: string
     likesCount: number
-};
+}
 
-// Dialogs and messages
+// Dialogs
 export type DialogsType = {
     peopleData: PeopleDataType[]
     messagesData: MessagesDataType[]
-    newMessageText: string
-};
+}
 export type PeopleDataType = {
     name: string
     id: string
-};
+}
 export type MessagesDataType = {
     id: string
     message: string
-};
+}
 
 // Users
 export type UsersType = {
-    users: UserItemType[] | null
+    users: UserItemType[]
     pageSize: number
     totalUsersCount: number
-    currentPage: number | string
+    currentPage: number
     isLoading: boolean
-    followingProgress: number[] | string[] | []
-};
+    followingProgress: number[]
+}
 export type UserItemType = {
-    id: number | string
+    id: number
     name: string
     uniqueUrlName: string | null
     photos: {
@@ -74,20 +77,7 @@ export type UserItemType = {
     }
     status: string | null
     followed: boolean
-};
+}
 
-// Action
-export type ActionType = {
-    type: string
-    post?: string
-    text?: string
-    message?: string
-    userId?: string | number
-    users?: UserItemType[]
-    pageNumber?: number
-    totalCount?: number
-    isLoading?: boolean
-    profile?: ProfileInfoType
-    data?: AuthType
-    status?: string
-};
+// Global Action type
+export type ActionType = AuthActionsType | ProfileActionsType | UsersActionsType | DialogsActionsType

@@ -6,7 +6,17 @@ const instance = axios.create({
     headers: {
         "API-KEY": "998429a7-d76e-46af-a3e8-87cfbdfdd453"
     }
-})
+});
+
+export const loginAPI = {
+    login (email: string, password: string, rememberMe: boolean) {
+        return instance.post(`/auth/login`, {
+            email,
+            password,
+            rememberMe
+        });
+    }
+};
 
 export const usersAPI = {
     getUsers (currentPage: number | string = 1, pageSize: number | string = 10) {
@@ -34,3 +44,4 @@ export const profileAPI = {
         return instance.put(`profile/status`, { status: status });
     }
 };
+

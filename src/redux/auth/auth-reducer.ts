@@ -9,40 +9,47 @@ const initialState: AuthType = {
     isAuth: false
 };
 
-export const SET_USER_DATA = "SET_USER_DATA";
-
-
-const authReducer = (state = initialState, action: ActionType) => {
+const authReducer = (state = initialState, action: ActionType): AuthType => {
 
     switch (action.type) {
-        case SET_USER_DATA:
+        case "SET_USER_DATA":
             if (action.data) {
                 return {
                     ...state,
                     ...action.data
                 }
-            } else return state
+            } else return state;
 
         default:
             return state;
     }
 }
 
-export const setAuthUser = (data: AuthType): ActionType => ({
-    type: "SET_USER_DATA",
-    data: {
-        id: data.id,
-        login: data.login,
-        email: data.email,
-        isAuth: true
-    }
-});
+// Actions object:
+export const authActions = {
+    setAuthUser: (data: AuthType) => ({
+        type: "SET_USER_DATA",
+        data: {
+            id: data.id,
+            login: data.login,
+            email: data.email,
+            isAuth: true
+        }
+    } as const)
+};
 
+// Initial Global Type for Auth reducer:
+type PropertiesType<T> = T extends {[key: string]: infer U} ? U : any;
+export type AuthActionsType = ReturnType<PropertiesType<typeof authActions>>;
+
+
+
+// Thunks creators:
 export const setAuthThunkCreator = (): any => (dispatch: Dispatch) => {
     profileAPI.setAuth()
         .then(({data}) => {
             if (data.resultCode === 0) {
-                dispatch(setAuthUser(data.data));
+                dispatch(authActions.setAuthUser(data.data));
             }
         });
 }

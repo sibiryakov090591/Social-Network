@@ -6,8 +6,8 @@ import {NavLink} from 'react-router-dom';
 
 type PropsType = {
     usersData: UserItemType[]
-    follow: (id: string | number) => void
-    unfollow: (id: string | number) => void
+    follow: (id: number) => void
+    unfollow: (id: number) => void
     onPageChange: (id: number) => void
     pageSize: number
     totalUsersCount: number

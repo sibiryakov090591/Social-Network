@@ -1,21 +1,31 @@
-import React, {ChangeEvent} from "react";
+import React from "react";
 import styles from "./my-posts.module.css";
 import {ProfilePostsType} from "../../../redux/my-types";
 import {Post} from "./post/post";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 
 type MyPostsType = {
     myPosts: ProfilePostsType[] | null
-    onChangePost: (text: string) => void
-    addPost: () => void
-    currentValue: string
+    addPost: (text: string) => void
 };
+
+const MyPostForm: React.FC<InjectedFormProps> = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component={"textarea"} type={"textarea"} name={"myPost"} className={styles.post_message}/>
+            <button className={styles.post_btn}>New post</button>
+        </form>
+    )
+}
+
+const MyPostReduxForm = reduxForm({form: "myPost"})(MyPostForm);
 
 export const MyPosts: React.FC<MyPostsType> = (props) => {
 
-    let allPosts = null;
+    let posts = null;
 
     if (props.myPosts) {
-        allPosts = props.myPosts.map(i =>
+        posts = props.myPosts.map(i =>
             <Post id={i.id}
                   key={i.id}
                   message={i.message}
@@ -23,32 +33,20 @@ export const MyPosts: React.FC<MyPostsType> = (props) => {
             />);
     }
 
-    const addPost = () => {
-        if (props.currentValue.trim()) {
-            props.addPost()
+    const addPost = (data: {myPost?: string}) => {
+        if (data.myPost) {
+            props.addPost(data.myPost.trim());
         }
-    };
-
-    const onChangePostText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-        const text = e.currentTarget.value;
-        props.onChangePost(text);
     };
 
     return (
         <div className={styles.wrapper}>
             <h1 className={styles.title}>My Posts</h1>
             <div className={styles.new_post_wrapper}>
-                <textarea className={styles.post_message}
-                          onChange={onChangePostText}
-                          value={props.currentValue}>
-                </textarea>
-                <button className={styles.post_btn}
-                        onClick={addPost}>
-                    New post
-                </button>
+                <MyPostReduxForm onSubmit={addPost}/>
             </div>
             <div className={styles.posts_wrapper}>
-                {allPosts}
+                {posts}
             </div>
         </div>
     )

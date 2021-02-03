@@ -3,22 +3,20 @@ import {connect} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
 import {compose, Dispatch} from "redux";
 import {
-    addPost,
+    profileActions,
     setUserProfileThunkCreator, setUserStatusThunkCreator,
-    updatePost,
     updateUserStatusThunkCreator
 } from "../../redux/profile-reducer/profile-reducer";
-import {ProfileInfoType, ProfilePostsType} from "../../redux/my-types";
+import {ActionType, ProfileInfoType, ProfilePostsType} from "../../redux/my-types";
 import {Profile} from "./profile";
 import {RouteComponentProps, withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hok/withAuthRedirect";
+import {ThunkAction, ThunkDispatch} from "redux-thunk";
 
 type PropsType = {
     profileInfo: ProfileInfoType | null
     profilePosts: ProfilePostsType[] | null
-    currentPostValue: string
-    addPost: () => void
-    onChangePost: (text: string) => void
+    addPost: (text: string) => void
     setUserProfile: (userId: number | string) => void
     setUserStatus: (userId: number | string) => void
     isAuth: boolean
@@ -39,9 +37,7 @@ class ProfileContainer extends React.Component<PropsType & RouteComponentProps<{
         return (
             <Profile profileInfo={this.props.profileInfo}
                      profilePosts={this.props.profilePosts}
-                     currentPostValue={this.props.currentPostValue}
                      addPost={this.props.addPost}
-                     onChangePost={this.props.onChangePost}
                      profileStatus={this.props.profileStatus}
                      updateUserStatus={this.props.updateUserStatus}
             />
@@ -53,17 +49,15 @@ const mapStateToProps = (state: GlobalStateType) => {
     return {
         profileInfo: state.profile.profileInfo,
         profilePosts: state.profile.profilePosts,
-        currentPostValue: state.profile.currentPostValue,
         profileStatus: state.profile.profileStatus
     }
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<GlobalStateType, {}, ActionType>) => {
     return {
-        addPost: () => dispatch(addPost()),
-        onChangePost: (text: string) => dispatch(updatePost(text)),
-        setUserProfile: (userId: number | string) => dispatch(setUserProfileThunkCreator(userId)),
-        setUserStatus: (userId: number | string) => dispatch(setUserStatusThunkCreator(userId)),
+        addPost: (text: string) => dispatch(profileActions.addPost(text)),
+        setUserProfile: (userId: number) => dispatch(setUserProfileThunkCreator(userId)),
+        setUserStatus: (userId: number) => dispatch(setUserStatusThunkCreator(userId)),
         updateUserStatus: (status: string) => dispatch(updateUserStatusThunkCreator(status))
     }
 };

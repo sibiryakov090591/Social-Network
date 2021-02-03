@@ -7,9 +7,7 @@ import { MessagesDataType, PeopleDataType } from "../../redux/my-types";
 type DialogsType = {
     peopleData: Array<PeopleDataType>
     messagesData: Array<MessagesDataType>
-    currentValue: string
-    addMessage: () => void
-    onChangeMyMessage: (text: string) => void
+    addMessage: (text: string) => void
 };
 
 export const Dialogs:React.FC<DialogsType> = (props) => {
@@ -18,9 +16,7 @@ export const Dialogs:React.FC<DialogsType> = (props) => {
         <div className={styles.dialogs_wrapper}>
             <People peopleData={props.peopleData}/>
             <Messages  messagesData={props.messagesData}
-                       currentValue={props.currentValue}
                        addMessage={props.addMessage}
-                       onChangeMyMessage={props.onChangeMyMessage}
             />
         </div>
     )

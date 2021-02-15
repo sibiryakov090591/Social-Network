@@ -2,19 +2,17 @@ import React from 'react';
 import {Header} from "./header";
 import {connect} from 'react-redux';
 import {GlobalStateType} from "../../redux/redux-store";
-import {setAuthThunkCreator} from "../../redux/auth/auth-reducer";
-import {Dispatch} from 'redux';
+import {logoutThunkCreator} from "../../redux/auth/auth-reducer";
+import {ThunkDispatch} from "redux-thunk";
+import {ActionType} from "../../redux/my-types";
 
 type PropsType = {
     isAuth: boolean
     login: string | null
-    setAuthUser: () => void
+    logout: () => void
 }
 
 class HeaderContainer extends React.Component<PropsType, {}> {
-    componentDidMount() {
-        this.props.setAuthUser()
-    }
 
     render() {
         return <Header {...this.props} />
@@ -28,9 +26,9 @@ const mapStateToProps = (state: GlobalStateType) => {
     };
 };
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<GlobalStateType, {}, ActionType>) => {
     return {
-        setAuthUser: () => dispatch(setAuthThunkCreator()),
+        logout: () => dispatch(logoutThunkCreator())
     };
 };
 

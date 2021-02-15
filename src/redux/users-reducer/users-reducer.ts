@@ -13,7 +13,7 @@ const initialState: UsersType = {
     followingProgress: []
 };
 
-const usersReducer = (state = initialState, action: ActionType): UsersType => {
+const usersReducer = (state = initialState, action: UsersActionsType): UsersType => {
     switch (action.type) {
         case "FOLLOW":
             if (state.users) {

@@ -9,26 +9,59 @@ import {Settings} from "./components/settings/settings";
 import ProfileContainer from "./components/profile/profile-container";
 import DialogsContainer from './components/dialogs/dialogs-container';
 import UsersContainer from './components/users/users-container';
-import {Login} from "./components/Login/Login";
+import LoginContainer from "./components/Login/Login-container";
+import {connect} from "react-redux";
+import {ThunkDispatch} from "redux-thunk";
+import {GlobalStateType} from "./redux/redux-store";
+import {ActionType} from "./redux/my-types";
+import {compose} from 'redux';
+import {initializeApp} from './redux/app-reducer/app-reducer';
+import {Preloader} from "./components/preloader/preloader";
 
-const App = () => {
-    return (
-        <BrowserRouter>
-            <div className="App-wrapper">
-                <HeaderContainer/>
-                <Navbar/>
-                <div className="App-wrapper-content">
-                    <Route path='/login' render={() => <Login/>}/>
-                    <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-                    <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-                    <Route path='/users' render={() => <UsersContainer/>}/>
-                    <Route path='/news' render={() => <News/>}/>
-                    <Route path='/music' render={() => <Music/>}/>
-                    <Route path='/settings' render={() => <Settings/>}/>
-                </div>
-            </div>
-        </BrowserRouter>
-    )
+type PropsType = {
+    initializeApp: () => void
+    isInitialized: boolean
 }
 
-export default App;
+class App extends React.Component<PropsType> {
+
+    componentDidMount() {
+        this.props.initializeApp()
+    }
+
+    render() {
+
+        if (!this.props.isInitialized) return <Preloader/>
+
+        return (
+            <BrowserRouter>
+                <div className="App-wrapper">
+                    <HeaderContainer/>
+                    <Navbar/>
+                    <div className="App-wrapper-content">
+                        <Route path='/login' render={() => <LoginContainer/>}/>
+                        <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                        <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                        <Route path='/users' render={() => <UsersContainer/>}/>
+                        <Route path='/news' render={() => <News/>}/>
+                        <Route path='/music' render={() => <Music/>}/>
+                        <Route path='/settings' render={() => <Settings/>}/>
+                    </div>
+                </div>
+            </BrowserRouter>
+        )
+    }
+}
+
+const mapStateToProps = (state: GlobalStateType) => {
+    return {
+        isInitialized: state.initialize.initialized
+    };
+};
+const mapDispatchToProps = (dispatch: ThunkDispatch<GlobalStateType, {}, ActionType>) => {
+    return {
+        initializeApp: () => dispatch(initializeApp())
+    };
+};
+
+export default compose(connect(mapStateToProps, mapDispatchToProps))(App);

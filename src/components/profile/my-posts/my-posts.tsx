@@ -3,16 +3,21 @@ import styles from "./my-posts.module.css";
 import {ProfilePostsType} from "../../../redux/my-types";
 import {Post} from "./post/post";
 import {Field, InjectedFormProps, reduxForm} from "redux-form";
+import {maxLength} from "../../../utils/validators/validators";
+import {TextareaForm} from "../../UI-kit/textarea/textareaForm";
 
 type MyPostsType = {
     myPosts: ProfilePostsType[] | null
     addPost: (text: string) => void
 };
 
+const maxLength500 = maxLength(500);
+
 const MyPostForm: React.FC<InjectedFormProps> = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
-            <Field component={"textarea"} type={"textarea"} name={"myPost"} className={styles.post_message}/>
+            <Field validate={maxLength500} component={TextareaForm} type={"textarea"} name={"myPost"}
+                   className={styles.post_message}/>
             <button className={styles.post_btn}>New post</button>
         </form>
     )
@@ -33,7 +38,7 @@ export const MyPosts: React.FC<MyPostsType> = (props) => {
             />);
     }
 
-    const addPost = (data: {myPost?: string}) => {
+    const addPost = (data: { myPost?: string }) => {
         if (data.myPost) {
             props.addPost(data.myPost.trim());
         }

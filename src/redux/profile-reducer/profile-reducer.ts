@@ -26,7 +26,7 @@ const initialState: ProfileType = {
     profileStatus: ""
 };
 
-const profileReducer = (state = initialState, action: ActionType): ProfileType => {
+const profileReducer = (state = initialState, action: ProfileActionsType): ProfileType => {
 
     switch (action.type) {
         case "ADD_POST":

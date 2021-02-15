@@ -1,5 +1,5 @@
 import {v1} from "uuid";
-import {ActionType, DialogsType, MessagesDataType} from "../my-types";
+import {DialogsType, MessagesDataType} from "../my-types";
 
 const initialState: DialogsType = {
     peopleData: [
@@ -16,7 +16,7 @@ const initialState: DialogsType = {
     ]
 };
 
-const dialogsReducer = (state = initialState, action: ActionType): DialogsType => {
+const dialogsReducer = (state = initialState, action: DialogsActionsType): DialogsType => {
 
     switch (action.type) {
         case "ADD_MESSAGE":

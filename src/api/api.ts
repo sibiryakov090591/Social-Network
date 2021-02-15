@@ -8,13 +8,22 @@ const instance = axios.create({
     }
 });
 
-export const loginAPI = {
-    login (email: string, password: string, rememberMe: boolean) {
-        return instance.post(`/auth/login`, {
+export const authAPI = {
+    setAuth () {
+        return instance.get(`auth/me`);
+    },
+    login (email: string, password: string, rememberMe = false) {
+        return instance.post(`auth/login`, {
             email,
             password,
             rememberMe
         });
+    },
+    logout () {
+        return instance.delete(`auth/login`);
+    },
+    getCaptcha () {
+        return instance.get(`security/get-captcha-url`);
     }
 };
 
@@ -31,9 +40,6 @@ export const usersAPI = {
 };
 
 export const profileAPI = {
-    setAuth () {
-        return instance.get(`auth/me`);
-    },
     setUserProfile (userId: number | string) {
         return instance.get(`profile/` + userId);
     },

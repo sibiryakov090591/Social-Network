@@ -2,6 +2,7 @@ import {AuthActionsType} from "./auth/auth-reducer";
 import {ProfileActionsType} from "./profile-reducer/profile-reducer";
 import {UsersActionsType} from "./users-reducer/users-reducer";
 import {DialogsActionsType} from "./dialogs-reducer/dialogs-reducer";
+import { AppActionsType } from "./app-reducer/app-reducer";
 
 // Auth
 export type AuthType = {
@@ -9,6 +10,7 @@ export type AuthType = {
     login: string | null
     email: string | null
     isAuth: boolean
+    captcha: undefined | string
 }
 
 // Profile
@@ -80,4 +82,4 @@ export type UserItemType = {
 }
 
 // Global Action type
-export type ActionType = AuthActionsType | ProfileActionsType | UsersActionsType | DialogsActionsType
+export type ActionType = AppActionsType | AuthActionsType | ProfileActionsType | UsersActionsType | DialogsActionsType

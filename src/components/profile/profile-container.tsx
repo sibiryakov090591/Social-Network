@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
-import {compose, Dispatch} from "redux";
+import {compose} from "redux";
 import {
     profileActions,
     setUserProfileThunkCreator, setUserStatusThunkCreator,
@@ -11,7 +11,7 @@ import {ActionType, ProfileInfoType, ProfilePostsType} from "../../redux/my-type
 import {Profile} from "./profile";
 import {RouteComponentProps, withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hok/withAuthRedirect";
-import {ThunkAction, ThunkDispatch} from "redux-thunk";
+import {ThunkDispatch} from "redux-thunk";
 
 type PropsType = {
     profileInfo: ProfileInfoType | null
@@ -20,6 +20,7 @@ type PropsType = {
     setUserProfile: (userId: number | string) => void
     setUserStatus: (userId: number | string) => void
     isAuth: boolean
+    userId: string
     profileStatus: string
     updateUserStatus: (status: string) => void
 };
@@ -28,7 +29,7 @@ class ProfileContainer extends React.Component<PropsType & RouteComponentProps<{
 
     componentDidMount() {
         let userId = this.props.match.params.userId;
-        if (!userId) userId = "14405";
+        if (!userId) userId = this.props.userId;
         this.props.setUserProfile(userId);
         this.props.setUserStatus(userId);
     }
@@ -49,7 +50,8 @@ const mapStateToProps = (state: GlobalStateType) => {
     return {
         profileInfo: state.profile.profileInfo,
         profilePosts: state.profile.profilePosts,
-        profileStatus: state.profile.profileStatus
+        profileStatus: state.profile.profileStatus,
+        userId: state.auth.id
     }
 };
 

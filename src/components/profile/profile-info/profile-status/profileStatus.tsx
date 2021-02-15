@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ChangeEvent} from "react";
 
 type PropsType = {
@@ -6,70 +6,49 @@ type PropsType = {
     updateUserStatus: (status: string) => void
 };
 
-export class ProfileStatus extends React.Component<PropsType, {}> {
+export const ProfileStatus: React.FC<PropsType> = (props) => {
 
-    state = {
-        editMode: false,
-        status: this.props.status
+    const [editMode, setEditMode] = useState(false);
+    const [status, setStatus] = useState(props.status);
+
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status])
+
+    const activatedEditMode = () => {
+        setEditMode(true);
     };
 
-    componentDidUpdate(prevProps: Readonly<PropsType>, prevState: Readonly<{}>) {
-        if (prevProps.status !== this.props.status) {
-            this.setState({
-                ...this.state,
-                status: this.props.status
-            });
-        }
+    const deactivatedEditMode = () => {
+        setEditMode(false);
+        setStatus(props.status);
     };
 
-    activatedEditMode = () => {
-        this.setState({
-            ...this.state,
-            editMode: true
-        });
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setStatus(e.currentTarget.value);
     };
 
-    deactivatedEditMode = () => {
-        this.setState({
-            ...this.state,
-            editMode: false,
-            status: this.props.status
-        });
+    const statusHandler = () => {
+        props.updateUserStatus(status);
+        setEditMode(false);
     };
 
-    onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        this.setState({
-            ...this.state,
-            status: e.currentTarget.value
-        });
-    };
-
-    statusHandler = () => {
-        this.props.updateUserStatus(this.state.status);
-        this.setState({
-            ...this.state,
-            editMode: false
-        });
-    };
-
-    render() {
-        return (
-            <div>
-                {
-                    this.state.editMode
-                        ? <div onBlur={this.statusHandler}>
-                            <input onChange={this.onChangeHandler}
-                                   type="text"
-                                   value={this.state.status}
-                                   autoFocus
-                            />
-                            <button onClick={this.statusHandler}>Save</button>
-                        </div>
-                        : <span onDoubleClick={this.activatedEditMode}>
-                            {this.props.status ? this.props.status : "Установить статус..."}
+    return (
+        <div>
+            {
+                editMode
+                    ? <div onBlur={statusHandler}>
+                        <input onChange={onChangeHandler}
+                               type="text"
+                               value={status}
+                               autoFocus
+                        />
+                        <button onClick={statusHandler}>Save</button>
+                    </div>
+                    : <span onDoubleClick={activatedEditMode}>
+                            {status ? status : "Установить статус..."}
                         </span>
-                }
-            </div>
-        );
-    };
+            }
+        </div>
+    )
 }

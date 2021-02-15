@@ -6,9 +6,15 @@ import React from "react";
 type PropsType = {
     isAuth: boolean
     login: string | null
+    logout: () => void
 }
 
 export const Header: React.FC<PropsType> = (props) => {
+
+    const logoutHandler = () => {
+        props.logout();
+    }
+
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
@@ -19,7 +25,10 @@ export const Header: React.FC<PropsType> = (props) => {
             <div className={styles.login}>
                 {
                     props.isAuth
-                    ? <NavLink to={"/profile"}>{props.login}</NavLink>
+                    ? <NavLink to={"/profile"}>
+                            {props.login}
+                            <div><a onClick={logoutHandler}>Logout</a></div>
+                    </NavLink>
                     : <NavLink to={"/login"}>Login</NavLink>
                 }
             </div>

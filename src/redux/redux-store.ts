@@ -20,3 +20,4 @@ type RootReducerType = typeof rootReducer;
 export type GlobalStateType = ReturnType<RootReducerType>;
 
 export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+

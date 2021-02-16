@@ -1,22 +1,18 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import {Redirect} from "react-router-dom";
 import {Field, InjectedFormProps, reduxForm} from 'redux-form';
 import {email, maxLength, required} from "../../utils/validators/validators";
 import {InputForm} from "../UI-kit/input/inputForm";
 import styles from "./Login.module.css";
+import {useDispatch, useSelector} from "react-redux";
+import {GlobalStateType} from "../../redux/redux-store";
+import {loginTC} from "../../redux/auth/auth-reducer";
 
 type FormType = {
     email?: string
     password?: string
     rememberMe?: boolean
 };
-
-type PropsType = {
-    loginHandler: (email: string, password: string, rememberMe: boolean) => void
-    logoutHandler: () => void
-    captcha: undefined | string
-    isAuth: boolean
-}
 
 const maxLength40 = maxLength(40);
 
@@ -58,7 +54,11 @@ const LoginForm: React.FC<InjectedFormProps<FormType>> = (props) => {
 
 const LoginReduxForm = reduxForm({form: "login"})(LoginForm);
 
-export const Login: React.FC<PropsType> = (props) => {
+export const Login: React.FC = () => {
+
+    const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
+    const captcha = useSelector((state: GlobalStateType) => state.auth.captcha);
+    const dispatch = useDispatch();
 
     const submit = (formData: FormType) => {
         const obj = {
@@ -66,17 +66,16 @@ export const Login: React.FC<PropsType> = (props) => {
             password: formData.password || "",
             rememberMe: !!formData.rememberMe
         }
-        props.loginHandler(obj.email, obj.password, obj.rememberMe)
+        dispatch(loginTC(obj.email, obj.password, obj.rememberMe));
     };
 
-    if (props.isAuth) return <Redirect to={"/profile"}/>
+    if (isAuth) return <Redirect to={"/profile"}/>
 
     return (
         <div>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={submit}/>
-            {props.captcha ? <div><img src={props.captcha} alt="captcha"/></div> : null}
+            {captcha ? <div><img src={captcha} alt="captcha"/></div> : null}
         </div>
-    );
-};
-
+    )
+}

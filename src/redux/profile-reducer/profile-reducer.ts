@@ -36,10 +36,16 @@ const profileReducer = (state = initialState, action: ProfileActionsType): Profi
                     message: action.text,
                     likesCount: 0
                 };
-                return {
+                if (state.profilePosts) {
+                    return {
+                        ...state,
+                        profilePosts: [newPost, ...state.profilePosts]
+                    }
+                } else return {
                     ...state,
-                    profilePosts: [newPost, ...state.profilePosts]
-                };
+                    profilePosts: [newPost]
+                }
+
             } else return state;
 
         case "SET_USER_PROFILE":
@@ -98,7 +104,7 @@ export const setUserStatusThunkCreator = (userId: number): ThunkType => {
         })
     }
 };
-export const updateUserStatusThunkCreator = (status: string): ThunkType => {
+export const updateUserStatusTC = (status: string): ThunkType => {
     return async (dispatch) => {
         profileAPI.updateUserStatus(status).then(({data}) => {
             if (data.resultCode === 0) dispatch(profileActions.setUserStatus(status));

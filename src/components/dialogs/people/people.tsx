@@ -1,20 +1,19 @@
 import React from 'react';
 import styles from "./people.module.css";
 import { DialogItem } from "./dialog-item/dialogItem";
-import { PeopleDataType } from "../../../redux/my-types";
+import {useSelector} from "react-redux";
+import {GlobalStateType} from "../../../redux/redux-store";
 
-type PropsType = {
-    peopleData: Array<PeopleDataType>
-};
+export const People:React.FC = () => {
 
-export const People:React.FC<PropsType> = (props) => {
+    const peopleData = useSelector((state: GlobalStateType) => state.dialogs.peopleData);
 
     return (
         <div className={styles.people_wrapper}>
             {
-                props.peopleData.map(i => {
+                peopleData.map(i => {
                     return (
-                        <DialogItem name={i.name} id={i.id}/>
+                        <DialogItem key={i.id} name={i.name} id={i.id}/>
                     )
                 })
             }

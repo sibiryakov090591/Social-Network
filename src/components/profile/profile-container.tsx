@@ -1,67 +1,27 @@
-import React from "react";
-import {connect} from "react-redux";
+import React, {useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
 import {compose} from "redux";
-import {
-    profileActions,
-    setUserProfileThunkCreator, setUserStatusThunkCreator,
-    updateUserStatusThunkCreator
-} from "../../redux/profile-reducer/profile-reducer";
-import {ActionType, ProfileInfoType, ProfilePostsType} from "../../redux/my-types";
+import {setUserProfileThunkCreator, setUserStatusThunkCreator} from "../../redux/profile-reducer/profile-reducer";
 import {Profile} from "./profile";
 import {RouteComponentProps, withRouter} from "react-router-dom";
 import {withAuthRedirect} from "../../hok/withAuthRedirect";
-import {ThunkDispatch} from "redux-thunk";
 
-type PropsType = {
-    profileInfo: ProfileInfoType | null
-    profilePosts: ProfilePostsType[] | null
-    addPost: (text: string) => void
-    setUserProfile: (userId: number | string) => void
-    setUserStatus: (userId: number | string) => void
-    isAuth: boolean
-    userId: string
-    profileStatus: string
-    updateUserStatus: (status: string) => void
-};
+const ProfileContainer: React.FC<RouteComponentProps<{ userId?: string }>> = (props) => {
 
-class ProfileContainer extends React.Component<PropsType & RouteComponentProps<{ userId?: string }>> {
+    const authUserId = useSelector((state: GlobalStateType) => state.auth.userId);
+    const dispatch = useDispatch();
 
-    componentDidMount() {
-        let userId = this.props.match.params.userId;
-        if (!userId) userId = this.props.userId;
-        this.props.setUserProfile(userId);
-        this.props.setUserStatus(userId);
-    }
+    let userId: any = props.match.params.userId;
 
-    render() {
-        return (
-            <Profile profileInfo={this.props.profileInfo}
-                     profilePosts={this.props.profilePosts}
-                     addPost={this.props.addPost}
-                     profileStatus={this.props.profileStatus}
-                     updateUserStatus={this.props.updateUserStatus}
-            />
-        )
-    }
+    useEffect(() => {
+        if (!userId) userId = authUserId;
+        dispatch(setUserProfileThunkCreator(userId));
+        dispatch(setUserStatusThunkCreator(userId));
+    }, [userId])
+
+    return <Profile/>
 }
 
-const mapStateToProps = (state: GlobalStateType) => {
-    return {
-        profileInfo: state.profile.profileInfo,
-        profilePosts: state.profile.profilePosts,
-        profileStatus: state.profile.profileStatus,
-        userId: state.auth.id
-    }
-};
+export default compose(withAuthRedirect, withRouter)(ProfileContainer);
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<GlobalStateType, {}, ActionType>) => {
-    return {
-        addPost: (text: string) => dispatch(profileActions.addPost(text)),
-        setUserProfile: (userId: number) => dispatch(setUserProfileThunkCreator(userId)),
-        setUserStatus: (userId: number) => dispatch(setUserStatusThunkCreator(userId)),
-        updateUserStatus: (status: string) => dispatch(updateUserStatusThunkCreator(status))
-    }
-};
-
-export default compose(withAuthRedirect, withRouter, connect(mapStateToProps, mapDispatchToProps))(ProfileContainer);;

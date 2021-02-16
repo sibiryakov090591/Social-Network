@@ -1,24 +1,21 @@
 import React from "react";
 import styles from "./profileInfo.module.css";
-import {ProfileInfoType} from "../../../redux/my-types";
 import {Preloader} from "../../preloader/preloader";
-import { ProfileStatus } from "./profile-status/profileStatus";
+import {ProfileStatus} from "./profile-status/profileStatus";
+import {useSelector} from "react-redux";
+import {GlobalStateType} from "../../../redux/redux-store";
 
-type PropsType = {
-    profileInfo: ProfileInfoType | null
-    profileStatus: string
-    updateUserStatus: (status: string) => void
-};
+export const ProfileInfo: React.FC = () => {
 
-export const ProfileInfo: React.FC<PropsType> = (props) => {
+    const profileInfo = useSelector((state: GlobalStateType) => state.profile.profileInfo);
 
-    if (!props.profileInfo) return <Preloader />
+    if (!profileInfo) return <Preloader/>
 
     return (
         <div className={styles.profile_wrapper}>
             <div className={styles.avatar_wrapper}>
                 <img className={styles.avatar}
-                     src={props.profileInfo.photos.large || props.profileInfo.photos.small || "ava.jpg"}
+                     src={profileInfo.photos.large || profileInfo.photos.small || "ava.jpg"}
                      alt="avatar"
                 />
             </div>
@@ -26,17 +23,15 @@ export const ProfileInfo: React.FC<PropsType> = (props) => {
             <div className={styles.descr}>
                 <div className={styles.descr_item}>
                     <span className={styles.span}>Name:</span>
-                    {props.profileInfo.fullName}
+                    {profileInfo.fullName}
                 </div>
                 <div className={styles.descr_item}>
                     <span className={styles.span}>About me:</span>
-                    {props.profileInfo.aboutMe}
+                    {profileInfo.aboutMe}
                 </div>
                 <div className={styles.descr_item}>
                     <span className={styles.span}>Status:</span>
-                    <ProfileStatus status={props.profileStatus}
-                                   updateUserStatus={props.updateUserStatus}
-                    />
+                    <ProfileStatus/>
                 </div>
             </div>
         </div>

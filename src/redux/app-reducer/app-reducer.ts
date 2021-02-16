@@ -34,6 +34,6 @@ type ThunkType = ThunkAction<void, GlobalStateType, unknown, ActionType>;
 export const initializeApp = (): ThunkType => (dispatch) => {
     dispatch(setAuthThunkCreator())
         .then(() => {
-            dispatch(appActions.initializedSuccess())
+            dispatch(appActions.initializedSuccess());
         })
 }

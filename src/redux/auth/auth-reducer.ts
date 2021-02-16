@@ -5,7 +5,7 @@ import {GlobalStateType} from "../redux-store";
 import {stopSubmit} from "redux-form";
 
 const initialState: AuthType = {
-    id: null,
+    userId: null,
     login: null,
     email: null,
     isAuth: false,
@@ -30,7 +30,7 @@ const authReducer = (state = initialState, action: AuthActionsType): AuthType =>
         case "LOGOUT_USER": {
             return {
                 ...state,
-                id: null,
+                userId: null,
                 login: null,
                 email: null,
                 isAuth: false
@@ -54,7 +54,7 @@ export const authActions = {
     setAuthUser: (data: DataType, isAuth: boolean) => ({
         type: "SET_USER_DATA",
         data: {
-            id: data.id,
+            userId: data.id,
             login: data.login,
             email: data.email,
             isAuth: isAuth
@@ -80,7 +80,7 @@ export const setAuthThunkCreator = (): ThunkType => async (dispatch) => {
             }
         });
 };
-export const loginThunkCreator = (email: string, password: string, rememberMe: boolean): ThunkType => async (dispatch) => {
+export const loginTC = (email: string, password: string, rememberMe: boolean): ThunkType => async (dispatch) => {
     authAPI.login(email, password, rememberMe)
         .then(({data}) => {
             const errorMessage = data.messages.length > 0 ? data.messages[0] : "some error";

@@ -2,17 +2,18 @@ import styles from "./header.module.css";
 import {Search} from "./search/search";
 import {NavLink} from "react-router-dom";
 import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {GlobalStateType} from "../../redux/redux-store";
+import {logoutThunkCreator} from "../../redux/auth/auth-reducer";
 
-type PropsType = {
-    isAuth: boolean
-    login: string | null
-    logout: () => void
-}
+export const Header: React.FC = (props) => {
 
-export const Header: React.FC<PropsType> = (props) => {
+    const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
+    const login = useSelector((state: GlobalStateType) => state.auth.login);
+    const dispatch = useDispatch();
 
     const logoutHandler = () => {
-        props.logout();
+        dispatch(logoutThunkCreator());
     }
 
     return (
@@ -24,9 +25,9 @@ export const Header: React.FC<PropsType> = (props) => {
             <Search/>
             <div className={styles.login}>
                 {
-                    props.isAuth
+                    isAuth
                     ? <NavLink to={"/profile"}>
-                            {props.login}
+                            {login}
                             <div><a onClick={logoutHandler}>Logout</a></div>
                     </NavLink>
                     : <NavLink to={"/login"}>Login</NavLink>

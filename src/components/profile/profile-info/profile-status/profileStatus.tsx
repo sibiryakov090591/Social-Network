@@ -1,19 +1,20 @@
 import React, {useEffect, useState} from "react";
 import {ChangeEvent} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {GlobalStateType} from "../../../../redux/redux-store";
+import {updateUserStatusTC} from "../../../../redux/profile-reducer/profile-reducer";
 
-type PropsType = {
-    status: string
-    updateUserStatus: (status: string) => void
-};
+export const ProfileStatus: React.FC = (props) => {
 
-export const ProfileStatus: React.FC<PropsType> = (props) => {
+    const profileStatus = useSelector((state: GlobalStateType) => state.profile.profileStatus);
+    const dispatch = useDispatch();
 
     const [editMode, setEditMode] = useState(false);
-    const [status, setStatus] = useState(props.status);
+    const [status, setStatus] = useState(profileStatus);
 
     useEffect(() => {
-        setStatus(props.status);
-    }, [props.status])
+        setStatus(profileStatus);
+    }, [profileStatus])
 
     const activatedEditMode = () => {
         setEditMode(true);
@@ -21,7 +22,7 @@ export const ProfileStatus: React.FC<PropsType> = (props) => {
 
     const deactivatedEditMode = () => {
         setEditMode(false);
-        setStatus(props.status);
+        setStatus(profileStatus);
     };
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +30,7 @@ export const ProfileStatus: React.FC<PropsType> = (props) => {
     };
 
     const statusHandler = () => {
-        props.updateUserStatus(status);
+        dispatch(updateUserStatusTC(status));
         setEditMode(false);
     };
 

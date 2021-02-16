@@ -6,7 +6,7 @@ import { AppActionsType } from "./app-reducer/app-reducer";
 
 // Auth
 export type AuthType = {
-    id: string | null
+    userId: string | null
     login: string | null
     email: string | null
     isAuth: boolean
@@ -16,7 +16,7 @@ export type AuthType = {
 // Profile
 export type ProfileType = {
     profileInfo: ProfileInfoType | null
-    profilePosts: ProfilePostsType[] | []
+    profilePosts: ProfilePostsType[] | null
     profileStatus: string
 }
 export type ProfileInfoType = {

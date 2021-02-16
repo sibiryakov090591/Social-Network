@@ -7,7 +7,7 @@ type NavbarType = {
     href: string
 };
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
     const navbarLinks: NavbarType[] = [
         {title: "Profile", href: "/profile"},
         {title: "Messages", href: "/dialogs"},

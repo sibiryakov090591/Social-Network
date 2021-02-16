@@ -1,24 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './users.module.css';
-import {UserItemType} from "../../redux/my-types";
 import {Preloader} from "../preloader/preloader";
-import {NavLink} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import {GlobalStateType} from "../../redux/redux-store";
+import {getUsersThunkCreator, usersActions} from "../../redux/users-reducer/users-reducer";
+import {User} from "./user/user";
 
-type PropsType = {
-    usersData: UserItemType[]
-    follow: (id: number) => void
-    unfollow: (id: number) => void
-    onPageChange: (id: number) => void
-    pageSize: number
-    totalUsersCount: number
-    currentPage: number
-    isLoading: boolean
-    isFollowingProgress: [] | number[]
-};
+export const Users: React.FC = () => {
 
-export const Users: React.FC<PropsType> = (props) => {
+    const {
+        users,
+        pageSize,
+        totalUsersCount,
+        currentPage,
+        isLoading
+    } = useSelector((state: GlobalStateType) => state.users);
+    const dispatch = useDispatch();
 
-    const howManyPages = Math.ceil(props.totalUsersCount / props.pageSize);
+    useEffect(() => {
+        dispatch(getUsersThunkCreator(currentPage, pageSize));
+        return () => {
+            dispatch(usersActions.setIsLoading(false));
+            dispatch(usersActions.setCurrentPage(1));
+        }
+    }, [])
+
+    const howManyPages = Math.ceil(totalUsersCount / pageSize);
     let pagesArray = [];
     for (let i = 1; i <= howManyPages; i++) {
         pagesArray.push(i);
@@ -26,63 +33,35 @@ export const Users: React.FC<PropsType> = (props) => {
 
     const pages = pagesArray.map(i => {
         let activeClassName = styles.pageNumber;
-        if (props.currentPage === i) {
+        if (currentPage === i) {
             activeClassName = styles.activePageNumber;
         }
         return <span key={i}
                      className={activeClassName}
-                     onClick={() => props.onPageChange(i)}>{i}</span>
+                     onClick={() => dispatch(getUsersThunkCreator(i, pageSize))}>{i}</span>
     });
 
-    const users = props.usersData
-        ? props.usersData.map(i => {
+    const usersData = users
+        ? users.map(i => {
 
-            const unfollow = () => props.unfollow(i.id);
-            const follow = () => props.follow(i.id);
             const photoUrl = i.photos.large || i.photos.small || "ava.jpg";
 
             return (
-                props.isLoading
+                isLoading
                     ?
                     <div className={styles.itemWrapper} key={i.id}>
                         <Preloader/>
                     </div>
                     :
-                    <div className={styles.itemWrapper} key={i.id}>
-                        <div className={styles.buttonWrapper}>
-                            <div className={styles.avatarWrapper}>
-                                <NavLink to={`/profile/${i.id}`}>
-                                    <img className={styles.avatar} src={photoUrl} alt="avatar"/>
-                                </NavLink>
-                            </div>
-                            {
-                                i.followed
-                                    ? <button disabled={props.isFollowingProgress.some(id => id === i.id)}
-                                              className={styles.button}
-                                              onClick={unfollow}>unFollow</button>
-                                    : <button disabled={props.isFollowingProgress.some(id => id === i.id)}
-                                              className={styles.button}
-                                              onClick={follow}>Follow</button>
-                            }
-                        </div>
-                        <div className={styles.descrWrapper}>
-                            <div>
-                                {i.name}
-                            </div>
-                            <div>
-                                location.country
-                            </div>
-                            <div>
-                                location.city
-                            </div>
-                            <div>
-                                {i.status}
-                            </div>
-                        </div>
-                    </div>
+                    <User id={i.id}
+                          photoUrl={photoUrl}
+                          name={i.name}
+                          status={i.status}
+                          followed={i.followed}
+                    />
             );
         })
-        : <Preloader />;
+        : <Preloader/>;
 
     return (
         <div>
@@ -91,7 +70,7 @@ export const Users: React.FC<PropsType> = (props) => {
             </div>
 
             <div className={styles.wrapper}>
-                {users}
+                {usersData}
             </div>
         </div>
     );

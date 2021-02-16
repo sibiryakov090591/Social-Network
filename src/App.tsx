@@ -7,13 +7,13 @@ import {Music} from "./components/music/music";
 import {Settings} from "./components/settings/settings";
 import ProfileContainer from "./components/profile/profile-container";
 import DialogsContainer from './components/dialogs/dialogs-container';
-import UsersContainer from './components/users/users-container';
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "./redux/redux-store";
 import {initializeApp} from './redux/app-reducer/app-reducer';
 import {Preloader} from "./components/preloader/preloader";
 import {Header} from './components/header/header';
 import {Login} from "./components/Login/Login";
+import {Users} from "./components/users/users";
 
 const App: React.FC = () => {
 
@@ -34,7 +34,7 @@ const App: React.FC = () => {
                     <Route path='/login' render={() => <Login/>}/>
                     <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
                     <Route path='/dialogs' render={() => <DialogsContainer/>}/>
-                    <Route path='/users' render={() => <UsersContainer/>}/>
+                    <Route path='/users' render={() => <Users/>}/>
                     <Route path='/news' render={() => <News/>}/>
                     <Route path='/music' render={() => <Music/>}/>
                     <Route path='/settings' render={() => <Settings/>}/>

@@ -1,7 +1,7 @@
 import {ThunkAction} from "redux-thunk";
 import {GlobalStateType} from "../redux-store";
 import {ActionType} from "../my-types";
-import {setAuthThunkCreator} from "../auth/auth-reducer";
+import {setAuthTC} from "../auth/auth-reducer";
 
 const initialState = {
     initialized: false
@@ -29,11 +29,9 @@ type PropertiesType<T> = T extends { [key: string]: infer U } ? U : any;
 export type AppActionsType = ReturnType<PropertiesType<typeof appActions>>;
 
 // Thunks type
-type ThunkType = ThunkAction<void, GlobalStateType, unknown, ActionType>;
+type ThunkType = ThunkAction<Promise<void>, GlobalStateType, unknown, ActionType>;
 
-export const initializeApp = (): ThunkType => (dispatch) => {
-    dispatch(setAuthThunkCreator())
-        .then(() => {
-            dispatch(appActions.initializedSuccess());
-        })
+export const initializeApp = (): ThunkType => async (dispatch) => {
+    await dispatch(setAuthTC());
+    dispatch(appActions.initializedSuccess());
 }

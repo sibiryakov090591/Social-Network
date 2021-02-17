@@ -81,7 +81,7 @@ export const profileActions = {
 
 
 // Initial Global Type for Profile reducer:
-type PropertiesType<T> = T extends {[key: string]: infer U} ? U : any;
+type PropertiesType<T> = T extends { [key: string]: infer U } ? U : any;
 export type ProfileActionsType = ReturnType<PropertiesType<typeof profileActions>>;
 
 
@@ -92,23 +92,22 @@ type ThunkType = ThunkAction<Promise<void>, GlobalStateType, unknown, ActionType
 // Thunks creators:
 export const setUserProfileThunkCreator = (userId: number): ThunkType => {
     return async (dispatch) => {
-        profileAPI.setUserProfile(userId).then(({data}) => {
-            dispatch(profileActions.setUserProfile(data));
-        });
+        const {data} = await profileAPI.setUserProfile(userId);
+        dispatch(profileActions.setUserProfile(data));
     }
 };
+
 export const setUserStatusThunkCreator = (userId: number): ThunkType => {
     return async (dispatch) => {
-        profileAPI.setUserStatus(userId).then(({data}) => {
-            dispatch(profileActions.setUserStatus(data));
-        })
+        const {data} = await profileAPI.setUserStatus(userId);
+        dispatch(profileActions.setUserStatus(data));
     }
 };
+
 export const updateUserStatusTC = (status: string): ThunkType => {
     return async (dispatch) => {
-        profileAPI.updateUserStatus(status).then(({data}) => {
-            if (data.resultCode === 0) dispatch(profileActions.setUserStatus(status));
-        })
+        const {data} = await profileAPI.updateUserStatus(status);
+        if (data.resultCode === 0) dispatch(profileActions.setUserStatus(status));
     }
 }
 

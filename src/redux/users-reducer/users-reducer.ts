@@ -1,6 +1,6 @@
 import {ActionType, UserItemType, UsersType} from "../my-types";
 import {Dispatch} from "redux";
-import {usersAPI} from "../../api/api";
+import {profileAPI, usersAPI} from "../../api/api";
 import {ThunkAction} from "redux-thunk";
 import {GlobalStateType} from "../redux-store";
 
@@ -96,12 +96,16 @@ export const usersActions = {
     setTotalCount: (id: number) => ({type: "SET_TOTAL_USERS_COUNT", totalCount: id} as const),
     onPageChange: (id: number) => ({type: "ON_PAGE_CHANGE", totalCount: id} as const),
     setIsLoading: (isLoading: boolean) => ({type: "SET_IS_LOADING", isLoading} as const),
-    setIsFollowingProgress: (id: number, isLoading: boolean) => ({type: "SET_IS_FOLLOWING_PROGRESS", userId: id, isLoading} as const)
+    setIsFollowingProgress: (id: number, isLoading: boolean) => ({
+        type: "SET_IS_FOLLOWING_PROGRESS",
+        userId: id,
+        isLoading
+    } as const)
 }
 
 
 // Initial Global Type for Users reducer:
-type PropertiesType<T> = T extends {[key: string]: infer U} ? U : any;
+type PropertiesType<T> = T extends { [key: string]: infer U } ? U : any;
 export type UsersActionsType = ReturnType<PropertiesType<typeof usersActions>>;
 
 
@@ -113,37 +117,33 @@ export const getUsersThunkCreator = (currentPage: number, pageSize: number): Thu
     return async (dispatch) => {
         dispatch(usersActions.setIsLoading(true));
         dispatch(usersActions.setCurrentPage(currentPage));
-        usersAPI.getUsers(currentPage, pageSize)
-            .then(response => {
-                dispatch(usersActions.setIsLoading(false));
-                dispatch(usersActions.setUsers(response.data.items));
-                dispatch(usersActions.setTotalCount(response.data.totalCount));
-            });
+
+        const response = await usersAPI.getUsers(currentPage, pageSize);
+        dispatch(usersActions.setIsLoading(false));
+        dispatch(usersActions.setUsers(response.data.items));
+        dispatch(usersActions.setTotalCount(response.data.totalCount));
     }
 };
 export const followThunkCreator = (userId: number): ThunkType => {
     return async (dispatch: Dispatch) => {
         dispatch(usersActions.setIsFollowingProgress(userId, true));
-        usersAPI.subscribe(userId)
-            .then(({data}) => {
-                if (data.resultCode === 0) {
-                    dispatch(usersActions.followSuccess(userId));
-                    dispatch(usersActions.setIsFollowingProgress(userId, false));
-                }
-            });
+
+        const {data} = await usersAPI.subscribe(userId);
+        if (data.resultCode === 0) {
+            dispatch(usersActions.followSuccess(userId));
+            dispatch(usersActions.setIsFollowingProgress(userId, false));
+        }
     }
 };
 export const unfollowThunkCreator = (userId: number): ThunkType => {
     return async (dispatch: Dispatch) => {
         dispatch(usersActions.setIsFollowingProgress(userId, true));
-        ;
-        usersAPI.unsubscribe(userId)
-            .then(({data}) => {
-                if (data.resultCode === 0) {
-                    dispatch(usersActions.unfollowSuccess(userId));
-                    dispatch(usersActions.setIsFollowingProgress(userId, false));
-                }
-            });
+
+        const {data} = await usersAPI.unsubscribe(userId);
+        if (data.resultCode === 0) {
+            dispatch(usersActions.unfollowSuccess(userId));
+            dispatch(usersActions.setIsFollowingProgress(userId, false));
+        }
     }
 };
 

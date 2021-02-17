@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
-import {logoutThunkCreator} from "../../redux/auth/auth-reducer";
+import {logoutTC} from "../../redux/auth/auth-reducer";
 
 export const Header: React.FC = (props) => {
 
@@ -13,7 +13,7 @@ export const Header: React.FC = (props) => {
     const dispatch = useDispatch();
 
     const logoutHandler = () => {
-        dispatch(logoutThunkCreator());
+        dispatch(logoutTC());
     }
 
     return (

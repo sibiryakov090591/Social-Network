@@ -4,11 +4,11 @@ import {GlobalStateType} from "../../redux/redux-store";
 import {compose} from "redux";
 import {setUserProfileThunkCreator, setUserStatusThunkCreator} from "../../redux/profile-reducer/profile-reducer";
 import {Profile} from "./profile";
-import {RouteComponentProps, withRouter} from "react-router-dom";
-import {withAuthRedirect} from "../../hok/withAuthRedirect";
+import {Redirect, RouteComponentProps, withRouter} from "react-router-dom";
 
 const ProfileContainer: React.FC<RouteComponentProps<{ userId?: string }>> = (props) => {
 
+    const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
     const authUserId = useSelector((state: GlobalStateType) => state.auth.userId);
     const dispatch = useDispatch();
 
@@ -20,8 +20,10 @@ const ProfileContainer: React.FC<RouteComponentProps<{ userId?: string }>> = (pr
         dispatch(setUserStatusThunkCreator(userId));
     }, [userId])
 
+    if (!isAuth) return <Redirect to={"/login"} />
+
     return <Profile/>
 }
 
-export default compose(withAuthRedirect, withRouter)(ProfileContainer);
+export default compose(withRouter)(ProfileContainer);
 

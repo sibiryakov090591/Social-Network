@@ -2,8 +2,15 @@ import React from 'react';
 import styles from "./dialogs.module.css";
 import {People} from "./people/people";
 import {Messages} from "./messages/messages";
+import {useSelector} from "react-redux";
+import {GlobalStateType} from "../../redux/redux-store";
+import {Redirect} from "react-router-dom";
 
-export const Dialogs: React.FC = () => {
+const Dialogs: React.FC = () => {
+
+    const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
+
+    if (!isAuth) return <Redirect to={"/login"}/>
 
     return (
         <div className={styles.dialogs_wrapper}>
@@ -12,3 +19,5 @@ export const Dialogs: React.FC = () => {
         </div>
     )
 };
+
+export default Dialogs;

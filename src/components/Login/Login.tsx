@@ -62,7 +62,7 @@ const LoginForm: React.FC<InjectedFormProps<FormType>> = (props) => {
 const LoginReduxForm = reduxForm({form: "login"})(LoginForm);
 
 
-export const Login: React.FC = () => {
+const Login: React.FC = () => {
 
     // Hooks
     const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
@@ -94,3 +94,5 @@ export const Login: React.FC = () => {
         </div>
     )
 }
+
+export default Login;

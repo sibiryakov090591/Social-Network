@@ -7,7 +7,7 @@ import {getUsersThunkCreator, usersActions} from "../../redux/users-reducer/user
 import {User} from "./user/user";
 import Paginator from "../UI-kit/paginator/paginator";
 
-export const Users: React.FC = () => {
+const Users: React.FC = () => {
 
     // Hooks
     const {
@@ -69,3 +69,5 @@ export const Users: React.FC = () => {
         </>
     );
 }
+
+export default Users;

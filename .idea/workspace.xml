@@ -6,14 +6,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/navbar/navbar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/navbar/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/preloader/preloader.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/preloader/preloader.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/preloader/preloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/preloader/preloader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs-container.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dialogs/dialogs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users-reducer/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer/users-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hok/withAuthRedirect.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/UI-kit/paginator" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/hok" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -68,11 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\hok" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit\paginator" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\users\user" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\Login" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit\checkbox" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\INCUBATOR\social\my-app\src" />
@@ -221,7 +218,7 @@
       <workItem from="1613774507722" duration="1021000" />
       <workItem from="1613776480204" duration="58000" />
       <workItem from="1613776616284" duration="2134000" />
-      <workItem from="1614523025176" duration="7817000" />
+      <workItem from="1614523025176" duration="13208000" />
     </task>
     <servers />
   </component>

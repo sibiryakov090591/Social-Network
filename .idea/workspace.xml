@@ -4,10 +4,15 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app-reducer/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app-reducer/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/navbar/navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/preloader/preloader.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/preloader/preloader.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/preloader/preloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/preloader/preloader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/users.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users-reducer/users-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users-reducer/users-reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/users/user" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/UI-kit/paginator" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -63,18 +68,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit\paginator" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\users\user" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\Login" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit\checkbox" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit\input" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit" />
       <recent name="C:\INCUBATOR\social\my-app\src\components" />
       <recent name="C:\INCUBATOR\social\my-app\src\redux\profile-reduser" />
       <recent name="C:\INCUBATOR\social\my-app\src\redux\gialogs-reduser" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\navbar" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.Subscribe to user">
@@ -212,7 +217,11 @@
       <workItem from="1613056608703" duration="179000" />
       <workItem from="1613401493694" duration="4707000" />
       <workItem from="1613495482399" duration="13820000" />
-      <workItem from="1613565153504" duration="2927000" />
+      <workItem from="1613565153504" duration="3811000" />
+      <workItem from="1613774507722" duration="1021000" />
+      <workItem from="1613776480204" duration="58000" />
+      <workItem from="1613776616284" duration="2134000" />
+      <workItem from="1614523025176" duration="7817000" />
     </task>
     <servers />
   </component>

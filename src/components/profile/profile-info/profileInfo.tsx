@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./profileInfo.module.css";
-import {Preloader} from "../../preloader/preloader";
+import {Preloader} from "../../UI-kit/preloader/preloader";
 import {ProfileStatus} from "./profile-status/profileStatus";
 import {useSelector} from "react-redux";
 import {GlobalStateType} from "../../../redux/redux-store";

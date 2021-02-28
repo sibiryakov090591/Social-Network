@@ -1,6 +1,6 @@
 import {ActionType, UserItemType, UsersType} from "../my-types";
 import {Dispatch} from "redux";
-import {profileAPI, usersAPI} from "../../api/api";
+import {usersAPI} from "../../api/api";
 import {ThunkAction} from "redux-thunk";
 import {GlobalStateType} from "../redux-store";
 
@@ -82,8 +82,7 @@ const usersReducer = (state = initialState, action: UsersActionsType): UsersType
                     : state.followingProgress.filter((id) => id !== action.userId)
             };
 
-        default:
-            return state;
+        default: return state;
     }
 }
 

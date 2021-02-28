@@ -1,13 +1,15 @@
 import React, {useEffect} from 'react';
 import styles from './users.module.css';
-import {Preloader} from "../preloader/preloader";
+import {Preloader} from "../UI-kit/preloader/preloader";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
 import {getUsersThunkCreator, usersActions} from "../../redux/users-reducer/users-reducer";
 import {User} from "./user/user";
+import Paginator from "../UI-kit/paginator/paginator";
 
 export const Users: React.FC = () => {
 
+    // Hooks
     const {
         users,
         pageSize,
@@ -17,61 +19,53 @@ export const Users: React.FC = () => {
     } = useSelector((state: GlobalStateType) => state.users);
     const dispatch = useDispatch();
 
+
+    // Lifecycle
     useEffect(() => {
         dispatch(getUsersThunkCreator(currentPage, pageSize));
         return () => {
             dispatch(usersActions.setIsLoading(false));
             dispatch(usersActions.setCurrentPage(1));
         }
-    }, [])
+    }, [dispatch])
 
-    const howManyPages = Math.ceil(totalUsersCount / pageSize);
-    let pagesArray = [];
-    for (let i = 1; i <= howManyPages; i++) {
-        pagesArray.push(i);
-    }
 
-    const pages = pagesArray.map(i => {
-        let activeClassName = styles.pageNumber;
-        if (currentPage === i) {
-            activeClassName = styles.activePageNumber;
-        }
-        return <span key={i}
-                     className={activeClassName}
-                     onClick={() => dispatch(getUsersThunkCreator(i, pageSize))}>{i}</span>
-    });
-
+    // Map users items
     const usersData = users
-        ? users.map(i => {
+        ? users.map(user => {
 
-            const photoUrl = i.photos.large || i.photos.small || "ava.jpg";
+            const photoUrl = user.photos.large || user.photos.small || "ava.jpg";
 
             return (
                 isLoading
                     ?
-                    <div className={styles.itemWrapper} key={i.id}>
+                    <div className={styles.itemWrapper} key={user.id}>
                         <Preloader/>
                     </div>
                     :
-                    <User id={i.id}
+                    <User id={user.id}
                           photoUrl={photoUrl}
-                          name={i.name}
-                          status={i.status}
-                          followed={i.followed}
+                          name={user.name}
+                          status={user.status}
+                          followed={user.followed}
                     />
             );
         })
         : <Preloader/>;
 
+
+    // Render
     return (
-        <div>
-            <div className={styles.pagesWrapper}>
-                {pages}
-            </div>
+        <>
+            <Paginator totalItemsCount={totalUsersCount}
+                       pageSize={pageSize}
+                       currentPage={currentPage}
+                       portionSize={15}
+            />
 
             <div className={styles.wrapper}>
                 {usersData}
             </div>
-        </div>
+        </>
     );
 }

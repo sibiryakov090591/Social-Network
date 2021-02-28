@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 import {Navbar} from "./components/UI-kit/navbar/navbar";
 import {News} from "./components/news/news";
 import {Music} from "./components/music/music";
@@ -38,7 +38,7 @@ const App: React.FC = () => {
 
     // Render
     return (
-        <BrowserRouter>
+        <HashRouter>
             <div className="App-wrapper">
                 <Header/>
                 <Navbar/>
@@ -52,7 +52,7 @@ const App: React.FC = () => {
                     <Route path='/settings' render={() => <Settings/>}/>
                 </div>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

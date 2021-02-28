@@ -5,6 +5,7 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
 import {logoutTC} from "../../redux/auth/auth-reducer";
+import logo from "../../images/mainLogo.png"
 
 export const Header: React.FC = (props) => {
 
@@ -19,7 +20,7 @@ export const Header: React.FC = (props) => {
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
-                <img className={styles.logo_img} src="mainLogo.png" alt="mainLogo"/>
+                <img className={styles.logo_img} src={logo} alt="mainLogo"/>
                 <div className={styles.logo_text}>Mango Social</div>
             </div>
             <Search/>

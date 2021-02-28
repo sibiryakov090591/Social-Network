@@ -6,6 +6,7 @@ import {GlobalStateType} from "../../redux/redux-store";
 import {getUsersThunkCreator, usersActions} from "../../redux/users-reducer/users-reducer";
 import {User} from "./user/user";
 import Paginator from "../UI-kit/paginator/paginator";
+import defaultAvatar from "../../images/ava.jpg";
 
 const Users: React.FC = () => {
 
@@ -34,7 +35,7 @@ const Users: React.FC = () => {
     const usersData = users
         ? users.map(user => {
 
-            const photoUrl = user.photos.large || user.photos.small || "ava.jpg";
+            const photoUrl = user.photos.large || user.photos.small || defaultAvatar;
 
             return (
                 isLoading

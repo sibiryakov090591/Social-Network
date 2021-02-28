@@ -4,6 +4,8 @@ import {Preloader} from "../../UI-kit/preloader/preloader";
 import {ProfileStatus} from "./profile-status/profileStatus";
 import {useSelector} from "react-redux";
 import {GlobalStateType} from "../../../redux/redux-store";
+import defaultAvatar from "../../../images/ava.jpg";
+
 
 export const ProfileInfo: React.FC = () => {
 
@@ -15,7 +17,7 @@ export const ProfileInfo: React.FC = () => {
         <div className={styles.profile_wrapper}>
             <div className={styles.avatar_wrapper}>
                 <img className={styles.avatar}
-                     src={profileInfo.photos.large || profileInfo.photos.small || "ava.jpg"}
+                     src={profileInfo.photos.large || profileInfo.photos.small || defaultAvatar}
                      alt="avatar"
                 />
             </div>

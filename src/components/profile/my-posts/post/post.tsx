@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./post.module.css";
+import defaultAvatar from "../../../../images/ava.jpg";
 
 export type PostType = {
     id: string
@@ -17,7 +18,7 @@ export const Post: React.FC<PostType> = (props) => {
 
     return (
         <div className={styles.post_wrapper}>
-            <img className={styles.avatar} src="ava.jpg" alt="avatar"/>
+            <img className={styles.avatar} src={defaultAvatar} alt="avatar"/>
             <div className={styles.message_wrapper}>
                 <div className={styles.message} id={props.id}>
                     {props.message}

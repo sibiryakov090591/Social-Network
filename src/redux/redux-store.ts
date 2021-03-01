@@ -21,3 +21,5 @@ export type GlobalStateType = ReturnType<RootReducerType>;
 
 export const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
+//@ts-ignore
+window.store = store

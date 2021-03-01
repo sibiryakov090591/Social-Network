@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {ChangeEvent} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../../../redux/redux-store";
-import {updateUserStatusTC} from "../../../../redux/profile-reducer/profile-reducer";
+import {updateUserStatus} from "../../../../redux/profile-reducer/profile-reducer";
 
 export const ProfileStatus: React.FC = (props) => {
 
@@ -30,7 +30,7 @@ export const ProfileStatus: React.FC = (props) => {
     };
 
     const statusHandler = () => {
-        dispatch(updateUserStatusTC(status));
+        dispatch(updateUserStatus(status));
         setEditMode(false);
     };
 

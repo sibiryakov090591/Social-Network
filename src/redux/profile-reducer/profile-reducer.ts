@@ -23,7 +23,8 @@ const initialState: ProfileType = {
             likesCount: 0
         }
     ],
-    profileStatus: ""
+    profileStatus: "",
+    isOwner: false
 };
 
 const profileReducer = (state = initialState, action: ProfileActionsType): ProfileType => {
@@ -67,6 +68,23 @@ const profileReducer = (state = initialState, action: ProfileActionsType): Profi
                 profileStatus: ""
             };
 
+        case "SET_IS_OWNER": {
+            return {
+                ...state,
+                isOwner: action.status
+            }
+        }
+
+        case "SET_PHOTOS": {
+            return <ProfileType>{
+                ...state,
+                profileInfo: {
+                    ...state.profileInfo,
+                    photos: action.photos
+                }
+            }
+        }
+
         default:
             return state;
     }
@@ -76,7 +94,9 @@ const profileReducer = (state = initialState, action: ProfileActionsType): Profi
 export const profileActions = {
     addPost: (text: string) => ({type: "ADD_POST", text} as const),
     setUserProfile: (profile: ProfileInfoType) => ({type: "SET_USER_PROFILE", profile} as const),
-    setUserStatus: (status: string) => ({type: "SET_USER_STATUS", status} as const)
+    setUserStatus: (status: string) => ({type: "SET_USER_STATUS", status} as const),
+    isOwner: (status: boolean) => ({type: "SET_IS_OWNER", status} as const),
+    setPhotoSuccess: (photos: any) => ({type: "SET_PHOTOS", photos} as const),
 }
 
 
@@ -90,24 +110,33 @@ type ThunkType = ThunkAction<Promise<void>, GlobalStateType, unknown, ActionType
 
 
 // Thunks creators:
-export const setUserProfileThunkCreator = (userId: number): ThunkType => {
+export const getUserProfile = (userId: number): ThunkType => {
     return async (dispatch) => {
         const {data} = await profileAPI.setUserProfile(userId);
         dispatch(profileActions.setUserProfile(data));
     }
 };
 
-export const setUserStatusThunkCreator = (userId: number): ThunkType => {
+export const getUserStatus = (userId: number): ThunkType => {
     return async (dispatch) => {
         const {data} = await profileAPI.setUserStatus(userId);
         dispatch(profileActions.setUserStatus(data));
     }
 };
 
-export const updateUserStatusTC = (status: string): ThunkType => {
+export const updateUserStatus = (status: string): ThunkType => {
     return async (dispatch) => {
         const {data} = await profileAPI.updateUserStatus(status);
         if (data.resultCode === 0) dispatch(profileActions.setUserStatus(status));
+    }
+}
+
+export const uploadUserPhoto = (file: any): ThunkType => {
+    return async (dispatch) => {
+        const {data} = await profileAPI.uploadUserPhoto(file);
+        if (data.resultCode === 0) {
+            dispatch(profileActions.setPhotoSuccess(data.data.photos))
+        }
     }
 }
 

@@ -3,6 +3,7 @@ import {ActionType, ProfileInfoType, ProfilePostsType, ProfileType} from "../my-
 import {profileAPI} from "../../api/api";
 import {ThunkAction} from "redux-thunk";
 import {GlobalStateType} from "../redux-store";
+import {stopSubmit} from "redux-form";
 
 const initialState: ProfileType = {
     profileInfo: null,
@@ -106,7 +107,7 @@ export type ProfileActionsType = ReturnType<PropertiesType<typeof profileActions
 
 
 // Thunks type
-type ThunkType = ThunkAction<Promise<void>, GlobalStateType, unknown, ActionType>;
+type ThunkType = ThunkAction<Promise<any>, GlobalStateType, unknown, ActionType>;
 
 
 // Thunks creators:
@@ -140,12 +141,18 @@ export const uploadUserPhoto = (file: any): ThunkType => {
     }
 }
 
-export const updateProfileInfo = (newInfo: any): ThunkType => {
-    return async (dispatch) => {
+export const updateProfileInfo = (newInfo: any): any => {
+    return async (dispatch: any, getState: any) => {
         const {data} = await profileAPI.updateProfileInfo(newInfo);
-        debugger
+        const errorMessage = data.messages.length > 0 ? data.messages[0] : "some error";
         if (data.resultCode === 0) {
-
+            const userId = getState().auth.userId
+            if (userId) {
+                dispatch(getUserProfile(+userId));
+            }
+        } else {
+            dispatch(stopSubmit("profile", {_error: errorMessage}))
+            return Promise.reject(errorMessage)
         }
     }
 }

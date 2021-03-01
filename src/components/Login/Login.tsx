@@ -6,7 +6,7 @@ import {InputForm} from "../UI-kit/input/inputForm";
 import styles from "./Login.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
-import {loginTC} from "../../redux/auth/auth-reducer";
+import {login} from "../../redux/auth/auth-reducer";
 
 
 type FormType = {
@@ -23,32 +23,24 @@ const maxLength40 = maxLength(40);
 const LoginForm: React.FC<InjectedFormProps<FormType>> = (props) => {
 
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field component={InputForm}
-                       name={"email"}
-                       validate={[required, maxLength40, email]}
-                       label={"Email"}
-                />
-            </div>
-            <div>
-                <Field component={InputForm}
-                       name={"password"}
-                       validate={[required, maxLength40]}
-                       label={"Password"}
-                       type={"password"}
-                />
-            </div>
-            <div>
-                <Field component={InputForm}
-                       name={"rememberMe"}
-                       type={"checkbox"}
-                       label={"Remember me"}
-                />
-            </div>
-            <div>
-                <button>Login</button>
-            </div>
+        <form className={styles.form} onSubmit={props.handleSubmit}>
+            <Field component={InputForm}
+                   name={"email"}
+                   validate={[required, maxLength40, email]}
+                   label={"Email"}
+            />
+            <Field component={InputForm}
+                   name={"password"}
+                   validate={[required, maxLength40]}
+                   label={"Password"}
+                   type={"password"}
+            />
+            <Field component={InputForm}
+                   name={"rememberMe"}
+                   type={"checkbox"}
+                   label={"Remember me"}
+            />
+            <button className={styles.btn}>Login</button>
             {
                 // Show error message if login try false
                 props.error && <div className={styles.commonError}>{props.error}</div>
@@ -77,7 +69,7 @@ const Login: React.FC = () => {
             password: formData.password || "",
             rememberMe: !!formData.rememberMe
         }
-        dispatch(loginTC(obj.email, obj.password, obj.rememberMe));
+        dispatch(login(obj.email, obj.password, obj.rememberMe));
     };
 
 
@@ -87,8 +79,8 @@ const Login: React.FC = () => {
 
     // Render login form
     return (
-        <div>
-            <h1>Login</h1>
+        <div className={styles.loginWrapper}>
+            <h1 className={styles.h1}>Login</h1>
             <LoginReduxForm onSubmit={submit}/>
             {captcha ? <div><img src={captcha} alt="captcha"/></div> : null}
         </div>

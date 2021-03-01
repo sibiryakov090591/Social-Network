@@ -1,16 +1,5 @@
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
-    margin-top: 50px;
+.span, .btn {
+    cursor: pointer;
 }
 
 .btn {
@@ -18,8 +7,8 @@
     margin-left: 10px;
     justify-content: center;
     align-items: center;
-    width: 150px;
-    height: 40px;
+    width: 80px;
+    height: 20px;
     outline: none;
     background-color: var(--btn-and-border-bg-color);
     border: none;
@@ -28,13 +17,17 @@
     color: var(--active-btn-text-color);
     font-weight: 600;
     text-align: center;
-    cursor: pointer;
 }
 
 .btn:active {
     background-color: var(--active-btn-bg-color);
 }
 
-.contacts {
-    margin-bottom: 50px;
+.input {
+    height: 30px;
+    width: 250px;
+    padding: 0 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--btn-and-border-bg-color)
 }

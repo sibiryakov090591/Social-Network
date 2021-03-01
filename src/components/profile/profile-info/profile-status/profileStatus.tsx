@@ -3,6 +3,7 @@ import {ChangeEvent} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../../../redux/redux-store";
 import {updateUserStatus} from "../../../../redux/profile-reducer/profile-reducer";
+import styles from "./profileStatus.module.css";
 
 export const ProfileStatus: React.FC = (props) => {
 
@@ -20,11 +21,6 @@ export const ProfileStatus: React.FC = (props) => {
         setEditMode(true);
     };
 
-    const deactivatedEditMode = () => {
-        setEditMode(false);
-        setStatus(profileStatus);
-    };
-
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setStatus(e.currentTarget.value);
     };
@@ -35,21 +31,22 @@ export const ProfileStatus: React.FC = (props) => {
     };
 
     return (
-        <div>
+        <>
             {
                 editMode
-                    ? <div onBlur={statusHandler}>
+                    ? <div>
                         <input onChange={onChangeHandler}
                                type="text"
                                value={status}
                                autoFocus
+                               className={styles.input}
                         />
-                        <button onClick={statusHandler}>Save</button>
+                        <button className={styles.btn} onClick={statusHandler}>Save</button>
                     </div>
-                    : <span onDoubleClick={activatedEditMode}>
+                    : <span className={styles.span} onClick={activatedEditMode}>
                             {status ? status : "Установить статус..."}
                         </span>
             }
-        </div>
+        </>
     )
 }

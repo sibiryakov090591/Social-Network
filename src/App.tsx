@@ -37,8 +37,6 @@ const App: React.FC = () => {
     if (!isInitialized) return <Preloader/>
 
 
-    // if (isAuth) return <HashRouter><Redirect to={"/profile"} /></HashRouter>
-
     // Render
     return (
         <HashRouter>

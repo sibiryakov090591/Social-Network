@@ -1,6 +1,22 @@
+.wrapper {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
 .inputError {
     border: 1px solid red;
 }
 .spanError {
     color: red;
+}
+
+.input {
+    height: 30px;
+    width: 250px;
+    padding: 0 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--btn-and-border-bg-color);
 }

@@ -47,8 +47,8 @@ export const ProfileInfo: React.FC = () => {
 
     const socialContacts = Object.keys(obj).map(key => {
         return (
-            <div>
-                <span>{key}: </span>
+            <div key={key}>
+                <span className={styles.span}>{key}: </span>
                 {/*// @ts-ignore*/}
                 {profileInfo.contacts[key] && <a href={profileInfo.contacts[key]}>{key}</a>}
             </div>
@@ -68,35 +68,34 @@ export const ProfileInfo: React.FC = () => {
                      src={profileInfo.photos.large || profileInfo.photos.small || defaultAvatar}
                      alt="avatar"
                 />
+                {
+                    isOwner && <div className="input__wrapper">
+                        <input onChange={uploadPhotoHandler} type="file" id="input__file"
+                               className={styles.input_file}/>
+                        <label htmlFor="input__file" className={styles.input_label}>Загрузить фото</label>
+                    </div>
+                }
+                {
+                    isOwner && <button className={styles.btn} onClick={editModeHandler}>Изменить профиль</button>
+                }
             </div>
 
             <div className={styles.descr}>
-                {
-                    isOwner && <input onChange={uploadPhotoHandler} type="file"/>
-                }
-                {
-                    isOwner && <button onClick={editModeHandler}>Change</button>
-                }
                 <div className={styles.descr_item}>
-                    <span className={styles.span}>Name:</span>
+                    <span className={styles.span}>Name: </span>
                     {profileInfo.fullName}
                 </div>
                 <div className={styles.descr_item}>
-                    <span className={styles.span}>About me:</span>
+                    <span className={styles.span}>About me: </span>
                     {profileInfo.aboutMe}
                 </div>
                 <div className={styles.descr_item}>
-                    <span className={styles.span}>Status:</span>
+                    <span className={styles.span}>Status: </span>
                     {
                         isOwner ? <ProfileStatus/> : <span>{profileStatus}</span>
                     }
                 </div>
-                <div>
-                    Contacts:
-                    <div>
-                        {socialContacts}
-                    </div>
-                </div>
+                    {socialContacts}
             </div>
         </div>
     )

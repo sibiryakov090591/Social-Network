@@ -79,7 +79,7 @@ export const setAuthTC = (): ThunkType => async (dispatch) => {
     }
 };
 
-export const loginTC = (email: string, password: string, rememberMe: boolean): ThunkType => async (dispatch) => {
+export const login = (email: string, password: string, rememberMe: boolean): ThunkType => async (dispatch) => {
     const {data} = await authAPI.login(email, password, rememberMe);
 
     const errorMessage = data.messages.length > 0 ? data.messages[0] : "some error";
@@ -95,7 +95,7 @@ export const loginTC = (email: string, password: string, rememberMe: boolean): T
         dispatch(stopSubmit("login", {_error: errorMessage}));
     }
 };
-export const logoutTC = (): ThunkType => async (dispatch) => {
+export const logout = (): ThunkType => async (dispatch) => {
     const {data} = await authAPI.logout();
     if (data.resultCode === 0) {
         dispatch(authActions.setAuthUser({

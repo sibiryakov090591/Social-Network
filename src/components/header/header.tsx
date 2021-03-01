@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {GlobalStateType} from "../../redux/redux-store";
-import {logoutTC} from "../../redux/auth/auth-reducer";
+import {logout} from "../../redux/auth/auth-reducer";
 import logo from "../../images/mainLogo.png"
 
 export const Header: React.FC = (props) => {
@@ -14,7 +14,7 @@ export const Header: React.FC = (props) => {
     const dispatch = useDispatch();
 
     const logoutHandler = () => {
-        dispatch(logoutTC());
+        dispatch(logout());
     }
 
     return (

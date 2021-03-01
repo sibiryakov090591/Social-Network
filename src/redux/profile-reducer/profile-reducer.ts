@@ -96,7 +96,7 @@ export const profileActions = {
     setUserProfile: (profile: ProfileInfoType) => ({type: "SET_USER_PROFILE", profile} as const),
     setUserStatus: (status: string) => ({type: "SET_USER_STATUS", status} as const),
     isOwner: (status: boolean) => ({type: "SET_IS_OWNER", status} as const),
-    setPhotoSuccess: (photos: any) => ({type: "SET_PHOTOS", photos} as const),
+    setPhotoSuccess: (photos: any) => ({type: "SET_PHOTOS", photos} as const)
 }
 
 
@@ -136,6 +136,16 @@ export const uploadUserPhoto = (file: any): ThunkType => {
         const {data} = await profileAPI.uploadUserPhoto(file);
         if (data.resultCode === 0) {
             dispatch(profileActions.setPhotoSuccess(data.data.photos))
+        }
+    }
+}
+
+export const updateProfileInfo = (newInfo: any): ThunkType => {
+    return async (dispatch) => {
+        const {data} = await profileAPI.updateProfileInfo(newInfo);
+        debugger
+        if (data.resultCode === 0) {
+
         }
     }
 }

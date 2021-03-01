@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import {HashRouter, Route} from 'react-router-dom';
+import {HashRouter, Redirect, Route} from 'react-router-dom';
 import {Navbar} from "./components/UI-kit/navbar/navbar";
 import {News} from "./components/news/news";
 import {Music} from "./components/music/music";
@@ -23,6 +23,7 @@ const App: React.FC = () => {
 
     // Hooks
     const isInitialized = useSelector((state: GlobalStateType) => state.initialize.initialized);
+    const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
     const dispatch = useDispatch();
 
 
@@ -36,9 +37,12 @@ const App: React.FC = () => {
     if (!isInitialized) return <Preloader/>
 
 
+    // if (isAuth) return <HashRouter><Redirect to={"/profile"} /></HashRouter>
+
     // Render
     return (
         <HashRouter>
+            <Redirect to={"/profile"} />
             <div className="App-wrapper">
                 <Header/>
                 <Navbar/>

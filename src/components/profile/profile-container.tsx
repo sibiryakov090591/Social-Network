@@ -22,7 +22,7 @@ const ProfileContainer: React.FC<RouteComponentProps<{ userId?: string }>> = (pr
         if (!userId) userId = authUserId;
         dispatch(getUserProfile(userId));
         dispatch(getUserStatus(userId));
-    }, [userId])
+    })
 
     if (!isAuth) return <Redirect to={"/login"} />
 

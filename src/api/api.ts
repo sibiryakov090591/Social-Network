@@ -58,5 +58,8 @@ export const profileAPI = {
             }
         });
     },
+    updateProfileInfo (data: any) {
+        return instance.put(`profile`, data);
+    }
 };
 

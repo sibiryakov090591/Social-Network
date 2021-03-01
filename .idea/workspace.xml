@@ -7,11 +7,8 @@
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profile-status/profileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profile-status/profileStatus.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/my-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/my-types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/profile/profile-info/profile-data-form" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -66,11 +63,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\INCUBATOR\social\my-app\src\components\profile\profile-info\profile-data-form" />
       <recent name="C:\INCUBATOR\social\my-app\src\images" />
       <recent name="C:\INCUBATOR\social\my-app\src\hok" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\UI-kit\paginator" />
       <recent name="C:\INCUBATOR\social\my-app\src\components\users\user" />
-      <recent name="C:\INCUBATOR\social\my-app\src\components\Login" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\INCUBATOR\social\my-app\src\images" />
@@ -220,7 +217,8 @@
       <workItem from="1613776480204" duration="58000" />
       <workItem from="1613776616284" duration="2134000" />
       <workItem from="1614523025176" duration="13208000" />
-      <workItem from="1614553966894" duration="6287000" />
+      <workItem from="1614553966894" duration="6626000" />
+      <workItem from="1614584376286" duration="13918000" />
     </task>
     <servers />
   </component>

@@ -12,11 +12,12 @@ export const authAPI = {
     setAuth () {
         return instance.get(`auth/me`);
     },
-    login (email: string, password: string, rememberMe = false) {
+    login (email: string, password: string, rememberMe = false, captcha: string | null = null) {
         return instance.post(`auth/login`, {
             email,
             password,
-            rememberMe
+            rememberMe,
+            captcha
         });
     },
     logout () {

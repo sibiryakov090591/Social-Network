@@ -13,6 +13,7 @@ type FormType = {
     email?: string
     password?: string
     rememberMe?: boolean
+    captcha?: string
 };
 
 
@@ -21,6 +22,8 @@ const maxLength40 = maxLength(40);
 
 
 const LoginForm: React.FC<InjectedFormProps<FormType>> = (props) => {
+
+    const captcha = useSelector((state: GlobalStateType) => state.auth.captcha);
 
     return (
         <form className={styles.form} onSubmit={props.handleSubmit}>
@@ -40,6 +43,16 @@ const LoginForm: React.FC<InjectedFormProps<FormType>> = (props) => {
                    type={"checkbox"}
                    label={"Remember me"}
             />
+            {
+                captcha && <Field component={InputForm}
+                                  name={"captcha"}
+                                  label={"Captcha"}
+                                  validate={[required]}
+                />
+            }
+            {
+                captcha && <div><img src={captcha} alt="captcha"/></div>
+            }
             <button className={styles.btn}>Login</button>
             {
                 // Show error message if login try false
@@ -58,7 +71,6 @@ const Login: React.FC = () => {
 
     // Hooks
     const isAuth = useSelector((state: GlobalStateType) => state.auth.isAuth);
-    const captcha = useSelector((state: GlobalStateType) => state.auth.captcha);
     const dispatch = useDispatch();
 
 
@@ -67,9 +79,10 @@ const Login: React.FC = () => {
         const obj = {
             email: formData.email || "",
             password: formData.password || "",
-            rememberMe: !!formData.rememberMe
+            rememberMe: !!formData.rememberMe,
+            captcha: formData.captcha || null
         }
-        dispatch(login(obj.email, obj.password, obj.rememberMe));
+        dispatch(login(obj.email, obj.password, obj.rememberMe, obj.captcha));
     };
 
 
@@ -82,7 +95,6 @@ const Login: React.FC = () => {
         <div className={styles.loginWrapper}>
             <h1 className={styles.h1}>Login</h1>
             <LoginReduxForm onSubmit={submit}/>
-            {captcha ? <div><img src={captcha} alt="captcha"/></div> : null}
         </div>
     )
 }

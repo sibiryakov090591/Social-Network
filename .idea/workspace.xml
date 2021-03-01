@@ -4,22 +4,14 @@
     <list default="true" id="1e3a1929-ab83-41ec-b023-68e6056e84a3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI-kit/input/inputForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/input/inputForm.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI-kit/input/inputForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI-kit/input/inputForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/my-posts/my-posts.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profile-data-form/profileDataForm.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profile-data-form/profileDataForm.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profile-data-form/profileDataForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profile-data-form/profileDataForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profile-status/profileStatus.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profile-status/profileStatus.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/profile/profile-info/profileInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/auth-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile-reducer/profile-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/my-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/my-types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +221,7 @@
       <workItem from="1613776616284" duration="2134000" />
       <workItem from="1614523025176" duration="13208000" />
       <workItem from="1614553966894" duration="6626000" />
-      <workItem from="1614584376286" duration="28478000" />
+      <workItem from="1614584376286" duration="32388000" />
     </task>
     <servers />
   </component>

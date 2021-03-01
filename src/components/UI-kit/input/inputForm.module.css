@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .inputError {
@@ -10,6 +11,9 @@
 }
 .spanError {
     color: red;
+    position: absolute;
+    right: -73px;
+    top: 3px;
 }
 
 .input {

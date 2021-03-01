@@ -47,8 +47,7 @@ export const ProfileInfo: React.FC = () => {
 
     const socialContacts = Object.keys(obj).map(key => {
         return (
-            <div key={key}>
-                <span className={styles.span}>{key}: </span>
+            <div className={styles.socialLink} key={key}>
                 {/*// @ts-ignore*/}
                 {profileInfo.contacts[key] && <a href={profileInfo.contacts[key]}>{key}</a>}
             </div>
@@ -85,10 +84,12 @@ export const ProfileInfo: React.FC = () => {
                     <span className={styles.span}>Name: </span>
                     {profileInfo.fullName}
                 </div>
+
                 <div className={styles.descr_item}>
                     <span className={styles.span}>About me: </span>
                     {profileInfo.aboutMe}
                 </div>
+
                 <div className={styles.descr_item}>
                     <span className={styles.span}>Status: </span>
                     {

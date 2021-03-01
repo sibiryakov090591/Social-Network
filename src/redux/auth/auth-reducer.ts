@@ -9,7 +9,7 @@ const initialState: AuthType = {
     login: null,
     email: null,
     isAuth: false,
-    captcha: undefined
+    captcha: null
 };
 
 type DataType = {
@@ -61,7 +61,7 @@ export const authActions = {
         }
     } as const),
     logoutUser: () => ({type: "LOGOUT_USER"} as const),
-    captcha: (url: string) => ({type: "SET_CAPTCHA", captcha: url} as const)
+    captcha: (url: string | null) => ({type: "SET_CAPTCHA", captcha: url} as const)
 };
 
 // Initial Global Type for Auth reducer:
@@ -76,11 +76,12 @@ export const setAuthTC = (): ThunkType => async (dispatch) => {
     const {data} = await authAPI.setAuth();
     if (data.resultCode === 0) {
         dispatch(authActions.setAuthUser(data.data, true));
+        dispatch(authActions.captcha(null))
     }
 };
 
-export const login = (email: string, password: string, rememberMe: boolean): ThunkType => async (dispatch) => {
-    const {data} = await authAPI.login(email, password, rememberMe);
+export const login = (email: string, password: string, rememberMe: boolean, captcha: string | null): ThunkType => async (dispatch) => {
+    const {data} = await authAPI.login(email, password, rememberMe, captcha);
 
     const errorMessage = data.messages.length > 0 ? data.messages[0] : "some error";
     if (data.resultCode === 0) {

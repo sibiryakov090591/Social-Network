@@ -10,7 +10,7 @@ export type AuthType = {
     login: string | null
     email: string | null
     isAuth: boolean
-    captcha: undefined | string
+    captcha: string | null
 }
 
 // Profile
